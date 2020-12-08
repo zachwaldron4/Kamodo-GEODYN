@@ -76,9 +76,12 @@ Prerequisites:
 ## Using Git
 
 Pushing Documents to Github:  
- `git status`  -- shows which files are not hosted on github
+ `git status`  -- shows which files are not hosted on github  
+ `git add .`   -- adds all files to github  
+ `git commit -m "message"` -- commits files to be pushed and also adds a message  
+ `git push origin master`  -- pushes the files to github to the master branch
 
-
+To display the Sphinx HTML on Github:
 
 
 
