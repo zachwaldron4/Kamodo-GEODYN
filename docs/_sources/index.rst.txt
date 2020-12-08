@@ -13,7 +13,7 @@ Welcome to the GEODYN-Kamodo Project documentation!
 
    about.md
    technicial_tips.md
-   geodyn_running.md
+   geodyn_intro.md
    modify_subroutines.md
 
 

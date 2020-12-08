@@ -70,6 +70,8 @@ Prerequisites:
  
  Install Kamodo: ``pip install git+git://github.com/nasa/Kamodo.git``
 
+### Miscellaneous Tips
+- Running a script: `./script`
 
 ## Using Git
 
