@@ -6,8 +6,8 @@
 
 First access the AWS bastian server and enter your password:  
 
- - ``ssh zwaldron@52.1.42.186 `` 
- - ``ssh zwaldron@172.31.96.209``
+ - ``ssh username@52.1.42.186 `` 
+ - ``ssh username@172.31.96.209``
 
 To access the shared geodyn server:  
 
@@ -19,8 +19,8 @@ Most of this project exists in the `data` directory.
 
 Let's say we want to copy the `RUNS` directory to you home directory on `[m_geodyn@172.31.96.209]172.31.96.209`. 
 
- - Move the file to /tmp:  ``[user@aws_bastion]mv run.tar /tmp``   
-- Scp the file in /tmp to bastion host. ``[user@aws_bastion]scp 172.31.96.209:/tmp/run.tar``  
+ - Move the file to /tmp:  ``[username@aws_bastion]mv run.tar /tmp``   
+- Scp the file in /tmp to bastion host. ``[username@aws_bastion]scp 172.31.96.209:/tmp/run.tar``  
 - Both command will copy the run.tar from bastion to your local system. ``[your_local_system]scp run.tar <your_local_system>``  
 
 
@@ -70,10 +70,13 @@ Prerequisites:
  
  Install Kamodo: ``pip install git+git://github.com/nasa/Kamodo.git``
 
+### Miscellaneous Tips
+- Running a script: `./script`
 
 ## Using Git
 
-To be continued...
+Pushing Documents to Github:  
+ `git status`  -- shows which files are not hosted on github
 
 
 
