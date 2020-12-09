@@ -7,12 +7,13 @@ Welcome to the GEODYN-Kamodo Project documentation!
 ====================================================
 
 .. toctree::
-   :maxdepth: 5
-   :caption: Table of Contents
+   :maxdepth: 2
+   :caption: hello
    :includehidden:
 
    about.md
    technicial_tips.md
+   project_notes.md
    geodyn_intro.md
    modify_subroutines.md
 
