@@ -37,7 +37,7 @@
     <link rel="author" title="About these documents" href="about.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Introduction to GEODYN" href="geodyn_intro.html" />
+    <link rel="next" title="Notes on the Project" href="project_notes.html" />
     <link rel="prev" title="Kamodo-GEODYN Project" href="about.html" /> 
 </head>
 
@@ -83,7 +83,7 @@
               
             
             
-              <p class="caption"><span class="caption-text">Table of Contents</span></p>
+              <p class="caption"><span class="caption-text">hello</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="about.html">Kamodo-GEODYN Project</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Technical Tips</a><ul>
@@ -98,6 +98,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#using-git">Using Git</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="project_notes.html">Notes on the Project</a></li>
 <li class="toctree-l1"><a class="reference internal" href="geodyn_intro.html">Introduction to GEODYN</a></li>
 <li class="toctree-l1"><a class="reference internal" href="modify_subroutines.html">Modifying Subroutines:</a></li>
 </ul>
@@ -171,8 +172,8 @@
 <h2>Navigating AWS<a class="headerlink" href="#navigating-aws" title="Permalink to this headline">¶</a></h2>
 <p>First access the AWS bastian server and enter your password:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">ssh</span> <span class="pre">zwaldron&#64;52.1.42.186</span> </code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">ssh</span> <span class="pre">zwaldron&#64;172.31.96.209</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ssh</span> <span class="pre">username&#64;52.1.42.186</span> </code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ssh</span> <span class="pre">username&#64;172.31.96.209</span></code></p></li>
 </ul>
 <p>To access the shared geodyn server:</p>
 <ul class="simple">
@@ -183,8 +184,8 @@
 <h3>Copying files from the inner server.<a class="headerlink" href="#copying-files-from-the-inner-server" title="Permalink to this headline">¶</a></h3>
 <p>Let’s say we want to copy the <code class="docutils literal notranslate"><span class="pre">RUNS</span></code> directory to you home directory on <code class="docutils literal notranslate"><span class="pre">[m_geodyn&#64;172.31.96.209]172.31.96.209</span></code>.</p>
 <ul class="simple">
-<li><p>Move the file to /tmp:  <code class="docutils literal notranslate"><span class="pre">[user&#64;aws_bastion]mv</span> <span class="pre">run.tar</span> <span class="pre">/tmp</span></code></p></li>
-<li><p>Scp the file in /tmp to bastion host. <code class="docutils literal notranslate"><span class="pre">[user&#64;aws_bastion]scp</span> <span class="pre">172.31.96.209:/tmp/run.tar</span></code></p></li>
+<li><p>Move the file to /tmp:  <code class="docutils literal notranslate"><span class="pre">[username&#64;aws_bastion]mv</span> <span class="pre">run.tar</span> <span class="pre">/tmp</span></code></p></li>
+<li><p>Scp the file in /tmp to bastion host. <code class="docutils literal notranslate"><span class="pre">[username&#64;aws_bastion]scp</span> <span class="pre">172.31.96.209:/tmp/run.tar</span></code></p></li>
 <li><p>Both command will copy the run.tar from bastion to your local system. <code class="docutils literal notranslate"><span class="pre">[your_local_system]scp</span> <span class="pre">run.tar</span> <span class="pre">&lt;your_local_system&gt;</span></code></p></li>
 </ul>
 </div>
@@ -231,7 +232,8 @@
 </div>
 <div class="section" id="using-git">
 <h2>Using Git<a class="headerlink" href="#using-git" title="Permalink to this headline">¶</a></h2>
-<p>To be continued…</p>
+<p>Pushing Documents to Github:<br /><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code>  – shows which files are not hosted on github<br /><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">.</span></code>   – adds all files to github<br /><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">-m</span> <span class="pre">&quot;message&quot;</span></code> – commits files to be pushed and also adds a message<br /><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span> <span class="pre">origin</span> <span class="pre">master</span></code>  – pushes the files to github to the master branch</p>
+<p>To display the Sphinx HTML on Github:</p>
 </div>
 </div>
 
@@ -243,7 +245,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="geodyn_intro.html" class="btn btn-neutral float-right" title="Introduction to GEODYN" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="project_notes.html" class="btn btn-neutral float-right" title="Notes on the Project" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="about.html" class="btn btn-neutral float-left" title="Kamodo-GEODYN Project" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
