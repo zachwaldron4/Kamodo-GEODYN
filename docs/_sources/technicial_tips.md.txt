@@ -82,7 +82,10 @@ Pushing Documents to Github:
  `git push origin master`  -- pushes the files to github to the master branch
 
 To display the Sphinx HTML on Github:
-
+ - add a docs folder that contains all the html files.
+    - can add a feature to the make.bat file to saves htmls to docs with a command
+ - add a .nojekyll file to the file to the docs folder
+ - turn on Pages in the settings under github and make the root directory docs
 
 
 
