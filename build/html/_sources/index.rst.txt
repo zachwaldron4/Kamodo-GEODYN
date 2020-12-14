@@ -16,6 +16,7 @@ Welcome to the GEODYN-Kamodo Project documentation!
    project_notes.md
    geodyn_intro.md
    modify_subroutines.md
+   geodyn_density_models.md
 
 
 

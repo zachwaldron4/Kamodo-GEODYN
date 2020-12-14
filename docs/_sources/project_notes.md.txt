@@ -17,7 +17,7 @@ CD is treated as a constant in GEODYN, unless the parameter is being estimated i
 The DRAG.f90 subroutine modifies drag application and /or requests estimation of drag coefficients.
 
 
-## Changing the Density Model in GEODYN:
+## Regarding the Density Models in GEODYN:
 **On Overfitting: [Sutton 2020, Private Communication]**  
 When using orbital determination (OD) and estimating lots of parameters, residuals may not always show an obvious improvement even when a much better density model is used. In such a case, the deficiency of the original model is compensated by other estimated parameters, maybe CD, maybe other terms. This overfitting can lead to problems if you care about more than just the residuals, i.e., if you need to maintain a realistic CD in order to predict a future orbit. For instance, if you estimate CD = 100 with a horrible thermosphere model, that value may not persist so well into the future.
 

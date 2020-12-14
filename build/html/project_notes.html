@@ -89,7 +89,7 @@
 <li class="toctree-l1"><a class="reference internal" href="technicial_tips.html">Technical Tips</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Notes on the Project</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#atmospheric-density-and-drag">Atmospheric Density and Drag:</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#changing-the-density-model-in-geodyn">Changing the Density Model in GEODYN:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#regarding-the-density-models-in-geodyn">Regarding the Density Models in GEODYN:</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="geodyn_intro.html">Introduction to GEODYN</a></li>
@@ -168,8 +168,8 @@
 <p>CD is treated as a constant in GEODYN, unless the parameter is being estimated in a data reduction run. The factor CD varies slightly with satellite shape and atmospheric composition. However, for any geodetically useful satellite, it may be treated as a satellite dependent constant.</p>
 <p>The DRAG.f90 subroutine modifies drag application and /or requests estimation of drag coefficients.</p>
 </div>
-<div class="section" id="changing-the-density-model-in-geodyn">
-<h2>Changing the Density Model in GEODYN:<a class="headerlink" href="#changing-the-density-model-in-geodyn" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="regarding-the-density-models-in-geodyn">
+<h2>Regarding the Density Models in GEODYN:<a class="headerlink" href="#regarding-the-density-models-in-geodyn" title="Permalink to this headline">¶</a></h2>
 <p><strong>On Overfitting: [Sutton 2020, Private Communication]</strong><br />When using orbital determination (OD) and estimating lots of parameters, residuals may not always show an obvious improvement even when a much better density model is used. In such a case, the deficiency of the original model is compensated by other estimated parameters, maybe CD, maybe other terms. This overfitting can lead to problems if you care about more than just the residuals, i.e., if you need to maintain a realistic CD in order to predict a future orbit. For instance, if you estimate CD = 100 with a horrible thermosphere model, that value may not persist so well into the future.</p>
 <p><strong>Items to track when changing density models:</strong></p>
 <ul class="simple">

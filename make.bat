@@ -9,8 +9,16 @@ if "%SPHINXBUILD%" == "" (
 )
 set SOURCEDIR=source
 set BUILDDIR=build
+set DOCSDIR=docs
 
 if "%1" == "" goto help
+
+if "%1" == "github" (
+    %SPHINXBUILD% -M html %SOURCEDIR% %BUILDDIR% %SPHINXOPTS%
+    robocopy %BUILDDIR%/html %DOCSDIR% /E > nul
+    echo.Generated files copied to /docs
+    goto end
+)
 
 %SPHINXBUILD% >NUL 2>NUL
 if errorlevel 9009 (
