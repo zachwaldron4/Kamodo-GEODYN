@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Modifying Subroutines: &mdash; Kamodo-GEODYN Project tbd documentation</title>
+  <title>Modifying Subroutines: &mdash; Kamodo-GEODYN Documentation tbd documentation</title>
   
 
   
@@ -30,6 +30,7 @@
         <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
         <script src="_static/language_data.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -38,7 +39,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Atmospheric Density Models" href="geodyn_density_models.html" />
-    <link rel="prev" title="Introduction to GEODYN" href="geodyn_intro.html" /> 
+    <link rel="prev" title="GEODYN Output" href="geodyn_output.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -52,7 +53,7 @@
           
 
           
-            <a href="index.html" class="icon icon-home" alt="Documentation Home"> Kamodo-GEODYN Project
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> Kamodo-GEODYN Documentation
           
 
           
@@ -84,17 +85,17 @@
             
             
               <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="about.html">Kamodo-GEODYN Project</a></li>
-<li class="toctree-l1"><a class="reference internal" href="technicial_tips.html">Technical Tips</a></li>
-<li class="toctree-l1"><a class="reference internal" href="project_notes.html">Notes on the Project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="about.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="project_notes.html">Project Notes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="geodyn_intro.html">Introduction to GEODYN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="geodyn_output.html">GEODYN Output</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Modifying Subroutines:</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#including-density-output">Including Density Output:</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#other-modifications">Other Modifications:</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="geodyn_density_models.html">Atmospheric Density Models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="geodyn_density_models.html#iss-tracked-with-gps-run">ISS tracked with GPS run:</a></li>
+<li class="toctree-l1"><a class="reference internal" href="technicial_tips.html">Technical Tips</a></li>
 </ul>
 
             
@@ -110,7 +111,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">Kamodo-GEODYN Project</a>
+          <a href="index.html">Kamodo-GEODYN Documentation</a>
         
       </nav>
 
@@ -160,7 +161,31 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="modifying-subroutines">
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="modifying-subroutines">
 <h1>Modifying Subroutines:<a class="headerlink" href="#modifying-subroutines" title="Permalink to this headline">¶</a></h1>
 <p>Modifying subroutines is necessary to output parameters that are not necessarily included in the normal output of GEODYN.</p>
 <p>MOD directory Location:<br /><code class="docutils literal notranslate"><span class="pre">/data/geodyn_code/IIE/MODS/</span></code></p>
@@ -235,7 +260,7 @@ If on the last iteration, it prints the parameters to a file <code class="docuti
         <a href="geodyn_density_models.html" class="btn btn-neutral float-right" title="Atmospheric Density Models" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="geodyn_intro.html" class="btn btn-neutral float-left" title="Introduction to GEODYN" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="geodyn_output.html" class="btn btn-neutral float-left" title="GEODYN Output" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Atmospheric Density Models &mdash; Kamodo-GEODYN Project tbd documentation</title>
+  <title>Atmospheric Density Models &mdash; Kamodo-GEODYN Documentation tbd documentation</title>
   
 
   
@@ -30,6 +30,7 @@
         <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
         <script src="_static/language_data.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -37,6 +38,7 @@
     <link rel="author" title="About these documents" href="about.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Technical Tips" href="technicial_tips.html" />
     <link rel="prev" title="Modifying Subroutines:" href="modify_subroutines.html" /> 
 </head>
 
@@ -51,7 +53,7 @@
           
 
           
-            <a href="index.html" class="icon icon-home" alt="Documentation Home"> Kamodo-GEODYN Project
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> Kamodo-GEODYN Documentation
           
 
           
@@ -83,13 +85,16 @@
             
             
               <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="about.html">Kamodo-GEODYN Project</a></li>
-<li class="toctree-l1"><a class="reference internal" href="technicial_tips.html">Technical Tips</a></li>
-<li class="toctree-l1"><a class="reference internal" href="project_notes.html">Notes on the Project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="about.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="project_notes.html">Project Notes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="geodyn_intro.html">Introduction to GEODYN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="geodyn_output.html">GEODYN Output</a></li>
 <li class="toctree-l1"><a class="reference internal" href="modify_subroutines.html">Modifying Subroutines:</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Atmospheric Density Models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#iss-tracked-with-gps-run">ISS tracked with GPS run:</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Atmospheric Density Models</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#iss-tracked-with-gps-run">ISS tracked with GPS run:</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="technicial_tips.html">Technical Tips</a></li>
 </ul>
 
             
@@ -105,7 +110,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">Kamodo-GEODYN Project</a>
+          <a href="index.html">Kamodo-GEODYN Documentation</a>
         
       </nav>
 
@@ -155,17 +160,41 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="atmospheric-density-models">
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="atmospheric-density-models">
 <h1>Atmospheric Density Models<a class="headerlink" href="#atmospheric-density-models" title="Permalink to this headline">¶</a></h1>
 <p>GEODYN can select the atmospheric neutral density model that is used in the drag calculation.</p>
-</div>
 <div class="section" id="iss-tracked-with-gps-run">
-<h1>ISS tracked with GPS run:<a class="headerlink" href="#iss-tracked-with-gps-run" title="Permalink to this headline">¶</a></h1>
+<h2>ISS tracked with GPS run:<a class="headerlink" href="#iss-tracked-with-gps-run" title="Permalink to this headline">¶</a></h2>
 <p>As of December 2020, the only density models in GEODYN are MSIS 86, Jacchia 71, and DTM 87.<br />Below are plots of the drag coefficient (Cd), state vector, and density for the ISS run for different atmospheric density models.
 It is worth noting that for ISS runs, the mass and area are not well known, and are contributing to large errors in the drag coefficient. in addition to this, poor density models are further compensated for by inflating the drag coefficient in order to keeep residuals between OD iterations low.</p>
 <p>Plot of Drag Coefficient (Cd):<br /><img alt="_images/Cd_comparison.png" src="_images/Cd_comparison.png" /></p>
 <p>Plot of State Vector:<br /><img alt="_images/StateVector_comparison.png" src="_images/StateVector_comparison.png" /></p>
 <p>Plot of modelled density along the satellite orbit:<br /><img alt="_images/Density&#64;orbit_comparison.png" src="_images/Density&#64;orbit_comparison.png" /></p>
+</div>
 </div>
 
 
@@ -175,6 +204,8 @@ It is worth noting that for ISS runs, the mass and area are not well known, and 
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="technicial_tips.html" class="btn btn-neutral float-right" title="Technical Tips" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="modify_subroutines.html" class="btn btn-neutral float-left" title="Modifying Subroutines:" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>

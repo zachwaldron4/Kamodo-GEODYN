@@ -17,7 +17,7 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'Kamodo-GEODYN Project'
+project = 'Kamodo-GEODYN Documentation'
 copyright = '2020, Zach Waldron'
 author = 'Zach Waldron'
 
@@ -30,8 +30,16 @@ release = 'tbd'
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
-extensions = ['recommonmark'
-]
+extensions = [
+    'recommonmark',
+    'sphinx_markdown_tables',
+    'nbsphinx',
+    'sphinx.ext.mathjax',
+    ]
+
+mathjax_config = {
+    'TeX': {'equationNumbers': {'autoNumber': 'AMS', 'useLabelIds': True}},
+}
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']

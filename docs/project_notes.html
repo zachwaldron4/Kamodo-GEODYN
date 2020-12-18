@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Notes on the Project &mdash; Kamodo-GEODYN Project tbd documentation</title>
+  <title>Project Notes &mdash; Kamodo-GEODYN Documentation tbd documentation</title>
   
 
   
@@ -30,6 +30,7 @@
         <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
         <script src="_static/language_data.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -38,7 +39,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Introduction to GEODYN" href="geodyn_intro.html" />
-    <link rel="prev" title="Technical Tips" href="technicial_tips.html" /> 
+    <link rel="prev" title="Project Overview" href="about.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -52,7 +53,7 @@
           
 
           
-            <a href="index.html" class="icon icon-home" alt="Documentation Home"> Kamodo-GEODYN Project
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> Kamodo-GEODYN Documentation
           
 
           
@@ -84,18 +85,16 @@
             
             
               <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="about.html">Kamodo-GEODYN Project</a></li>
-<li class="toctree-l1"><a class="reference internal" href="technicial_tips.html">Technical Tips</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Notes on the Project</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#atmospheric-density-and-drag">Atmospheric Density and Drag:</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#regarding-the-density-models-in-geodyn">Regarding the Density Models in GEODYN:</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#on-the-geodyn-output">On the GEODYN Output</a></li>
+<li class="toctree-l1"><a class="reference internal" href="about.html">Project Overview</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Project Notes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#density-models-in-geodyn">Density Models in GEODYN</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="geodyn_intro.html">Introduction to GEODYN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="geodyn_output.html">GEODYN Output</a></li>
 <li class="toctree-l1"><a class="reference internal" href="modify_subroutines.html">Modifying Subroutines:</a></li>
 <li class="toctree-l1"><a class="reference internal" href="geodyn_density_models.html">Atmospheric Density Models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="geodyn_density_models.html#iss-tracked-with-gps-run">ISS tracked with GPS run:</a></li>
+<li class="toctree-l1"><a class="reference internal" href="technicial_tips.html">Technical Tips</a></li>
 </ul>
 
             
@@ -111,7 +110,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">Kamodo-GEODYN Project</a>
+          <a href="index.html">Kamodo-GEODYN Documentation</a>
         
       </nav>
 
@@ -142,7 +141,7 @@
     
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>Notes on the Project</li>
+      <li>Project Notes</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -161,17 +160,35 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="notes-on-the-project">
-<h1>Notes on the Project<a class="headerlink" href="#notes-on-the-project" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="atmospheric-density-and-drag">
-<h2>Atmospheric Density and Drag:<a class="headerlink" href="#atmospheric-density-and-drag" title="Permalink to this headline">¶</a></h2>
-<p>DRAG EQUATION <em>(add mathjax to add equation…)</em></p>
-<p>Where,<br />AD  acceleration due to atmospheric drag force<br />CD is the satellite drag coefficient<br />As is the cross-sectional area of the satellite<br />ms is the mass of the satellite<br />D is the-density of the atmosphere at the satellite position<br />vr  is the velocity vector of the satellite relative to the atmosphere, and<br />vr  is the magnitude of the velocity vector, vr .</p>
-<p>CD is treated as a constant in GEODYN, unless the parameter is being estimated in a data reduction run. The factor CD varies slightly with satellite shape and atmospheric composition. However, for any geodetically useful satellite, it may be treated as a satellite dependent constant.</p>
-<p>The DRAG.f90 subroutine modifies drag application and /or requests estimation of drag coefficients.</p>
-</div>
-<div class="section" id="regarding-the-density-models-in-geodyn">
-<h2>Regarding the Density Models in GEODYN:<a class="headerlink" href="#regarding-the-density-models-in-geodyn" title="Permalink to this headline">¶</a></h2>
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="project-notes">
+<h1>Project Notes<a class="headerlink" href="#project-notes" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="density-models-in-geodyn">
+<h2>Density Models in GEODYN<a class="headerlink" href="#density-models-in-geodyn" title="Permalink to this headline">¶</a></h2>
+<p>As of December 2020, the current default thermospheric implementation in GEODYN is the Jacchia 1971 model, with options existing to use the Thermosphere Drag Model (DTM87), or the MSIS-86 Empirical Drag Model (MSIS86). These outdated models represent a source of error in the calculation of satellite drag during an orbit determination run.  The deficiency of the density model will be compensated by overfitting to other estimated parameters, such as drag coefficient, estimated accelerations, state vector, etc. This overfitting can lead to problems if one needs to maintain realistic values for the estimated parameters in order to predict a future orbit.</p>
 <p><strong>On Overfitting: [Sutton 2020, Private Communication]</strong><br />When using orbital determination (OD) and estimating lots of parameters, residuals may not always show an obvious improvement even when a much better density model is used. In such a case, the deficiency of the original model is compensated by other estimated parameters, maybe CD, maybe other terms. This overfitting can lead to problems if you care about more than just the residuals, i.e., if you need to maintain a realistic CD in order to predict a future orbit. For instance, if you estimate CD = 100 with a horrible thermosphere model, that value may not persist so well into the future.</p>
 <p><strong>Items to track when changing density models:</strong></p>
 <ul class="simple">
@@ -187,22 +204,6 @@
 </li>
 </ul>
 </div>
-<div class="section" id="on-the-geodyn-output">
-<h2>On the GEODYN Output<a class="headerlink" href="#on-the-geodyn-output" title="Permalink to this headline">¶</a></h2>
-<p>The GEODYN ouput is spread out across many files and which files needs to be used depends on what one is looking for.  Below is a breakdown of the ouput, its format, and what can be found in each file.  This is not an exhaustive list, and represents the files that are pertinent to this project (using geodyn for model validation).<br />8</p>
-<p>| File Name  | File type (readability)  | Contents  | GEODYN Designation  | documentation loc   |
-|—|—|—|—|—|
-| iieout  | ascii  |   |   |   |
-| ascii_xyz  | ascii  |   |   |   |
-| ascii_kep  | ascii |   |   |   |
-| resid  | binary  |   |   |   |
-| orbfil  | binary  |   |   |   |
-| orbfil2  | binary  |   |   |   |
-| densityfil  | ascii  |   |   |   |
-| fort.9  | ascii  |   |   |   |
-| punch   |  binary | ???   | ???  | TODO  |</p>
-<p>[comment]: # TODO</p>
-</div>
 </div>
 
 
@@ -216,7 +217,7 @@
         <a href="geodyn_intro.html" class="btn btn-neutral float-right" title="Introduction to GEODYN" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="technicial_tips.html" class="btn btn-neutral float-left" title="Technical Tips" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="about.html" class="btn btn-neutral float-left" title="Project Overview" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

@@ -11,12 +11,12 @@ Welcome to the GEODYN-Kamodo Project documentation!
    :includehidden:
 
    about.md
-   technicial_tips.md
    project_notes.md
    geodyn_intro.md
+   geodyn_output.md
    modify_subroutines.md
    geodyn_density_models.md
-
+   technicial_tips.md
 
 
 
@@ -24,5 +24,4 @@ Indices and tables
 ==================
 
 * :ref:`genindex`
-* :ref:`modindex`
 * :ref:`search`

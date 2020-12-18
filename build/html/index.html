@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Welcome to the GEODYN-Kamodo Project documentation! &mdash; Kamodo-GEODYN Project tbd documentation</title>
+  <title>Welcome to the GEODYN-Kamodo Project documentation! &mdash; Kamodo-GEODYN Documentation tbd documentation</title>
   
 
   
@@ -30,6 +30,7 @@
         <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
         <script src="_static/language_data.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -37,7 +38,7 @@
     <link rel="author" title="About these documents" href="about.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Kamodo-GEODYN Project" href="about.html" /> 
+    <link rel="next" title="Project Overview" href="about.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -51,7 +52,7 @@
           
 
           
-            <a href="#" class="icon icon-home" alt="Documentation Home"> Kamodo-GEODYN Project
+            <a href="#" class="icon icon-home" alt="Documentation Home"> Kamodo-GEODYN Documentation
           
 
           
@@ -83,13 +84,13 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="about.html">Kamodo-GEODYN Project</a></li>
-<li class="toctree-l1"><a class="reference internal" href="technicial_tips.html">Technical Tips</a></li>
-<li class="toctree-l1"><a class="reference internal" href="project_notes.html">Notes on the Project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="about.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="project_notes.html">Project Notes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="geodyn_intro.html">Introduction to GEODYN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="geodyn_output.html">GEODYN Output</a></li>
 <li class="toctree-l1"><a class="reference internal" href="modify_subroutines.html">Modifying Subroutines:</a></li>
 <li class="toctree-l1"><a class="reference internal" href="geodyn_density_models.html">Atmospheric Density Models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="geodyn_density_models.html#iss-tracked-with-gps-run">ISS tracked with GPS run:</a></li>
+<li class="toctree-l1"><a class="reference internal" href="technicial_tips.html">Technical Tips</a></li>
 </ul>
 
             
@@ -105,7 +106,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="#">Kamodo-GEODYN Project</a>
+          <a href="#">Kamodo-GEODYN Documentation</a>
         
       </nav>
 
@@ -155,26 +156,43 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="welcome-to-the-geodyn-kamodo-project-documentation">
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="welcome-to-the-geodyn-kamodo-project-documentation">
 <h1>Welcome to the GEODYN-Kamodo Project documentation!<a class="headerlink" href="#welcome-to-the-geodyn-kamodo-project-documentation" title="Permalink to this headline">¶</a></h1>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="about.html">Kamodo-GEODYN Project</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="about.html">Project Overview</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="about.html#about-the-project">About the Project</a></li>
 <li class="toctree-l2"><a class="reference internal" href="about.html#kamodo">Kamodo</a></li>
 <li class="toctree-l2"><a class="reference internal" href="about.html#geodyn">GEODYN</a></li>
 <li class="toctree-l2"><a class="reference internal" href="about.html#goals">Goals</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="technicial_tips.html">Technical Tips</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="technicial_tips.html#navigating-aws">Navigating AWS</a></li>
-<li class="toctree-l2"><a class="reference internal" href="technicial_tips.html#using-git">Using Git</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="project_notes.html">Notes on the Project</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="project_notes.html#atmospheric-density-and-drag">Atmospheric Density and Drag:</a></li>
-<li class="toctree-l2"><a class="reference internal" href="project_notes.html#regarding-the-density-models-in-geodyn">Regarding the Density Models in GEODYN:</a></li>
-<li class="toctree-l2"><a class="reference internal" href="project_notes.html#on-the-geodyn-output">On the GEODYN Output</a></li>
+<li class="toctree-l1"><a class="reference internal" href="project_notes.html">Project Notes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="project_notes.html#density-models-in-geodyn">Density Models in GEODYN</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="geodyn_intro.html">Introduction to GEODYN</a><ul>
@@ -182,13 +200,21 @@
 <li class="toctree-l2"><a class="reference internal" href="geodyn_intro.html#runs">RUNS</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="geodyn_output.html">GEODYN Output</a></li>
 <li class="toctree-l1"><a class="reference internal" href="modify_subroutines.html">Modifying Subroutines:</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="modify_subroutines.html#including-density-output">Including Density Output:</a></li>
 <li class="toctree-l2"><a class="reference internal" href="modify_subroutines.html#other-modifications">Other Modifications:</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="geodyn_density_models.html">Atmospheric Density Models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="geodyn_density_models.html#iss-tracked-with-gps-run">ISS tracked with GPS run:</a></li>
+<li class="toctree-l1"><a class="reference internal" href="geodyn_density_models.html">Atmospheric Density Models</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="geodyn_density_models.html#iss-tracked-with-gps-run">ISS tracked with GPS run:</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="technicial_tips.html">Technical Tips</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="technicial_tips.html#navigating-aws">Navigating AWS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="technicial_tips.html#using-git">Using Git</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
@@ -196,7 +222,6 @@
 <h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h1>
 <ul class="simple">
 <li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
-<li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
 <li><p><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></p></li>
 </ul>
 </div>
@@ -209,7 +234,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="about.html" class="btn btn-neutral float-right" title="Kamodo-GEODYN Project" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="about.html" class="btn btn-neutral float-right" title="Project Overview" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
     </div>
