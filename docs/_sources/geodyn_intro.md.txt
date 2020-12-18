@@ -2,7 +2,7 @@
 
 A GEODYN run is based on the user inputs that get inputted into the run as a CARD.  The full set of CARDS is referred to as the deck. The deck is located at ```RUNS>INPUTS>iisset_start``` within our file structure. Information on each of the CARDS is in the Volume 3 Documentation.
 
-## File Structure:
+## AWS Directory Structure:
 
 ```
 IIE  
@@ -18,8 +18,6 @@ IIS
         (any modifications to the above subroutines)
 RUNS  
     (output and input files for GEODYN)
-
-
 ```
 
 

@@ -8,7 +8,7 @@ Welcome to the GEODYN-Kamodo Project documentation!
 
 .. toctree::
    :maxdepth: 2
-   :caption: hello
+   :caption:
    :includehidden:
 
    about.md
