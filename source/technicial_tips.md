@@ -6,8 +6,9 @@
 
 First access the AWS bastian server and enter your password:  
 
- - ``ssh username@52.1.42.186 `` 
- - ``ssh username@172.31.96.209``
+[comment]: <> ( - ``ssh username@52.1.42.186 `` )
+
+[comment]: <> ( - ``ssh username@172.31.96.209``)
 
 To access the shared geodyn server:  
 
