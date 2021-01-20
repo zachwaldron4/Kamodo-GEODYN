@@ -1,0 +1,1479 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Demonstration &mdash; Kamodo-GEODYN Documentation tbd documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="author" title="About these documents" href="about.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Getting Started:" href="getting_started.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> Kamodo-GEODYN Documentation
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="about.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="project_notes.html">Project Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="geodyn_intro.html">Introduction to GEODYN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="geodyn_output.html">GEODYN Output</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modify_subroutines.html">Modifying Subroutines:</a></li>
+<li class="toctree-l1"><a class="reference internal" href="geodyn_density_models.html">Atmospheric Density Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="technicial_tips.html">Technical Tips</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started:</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Demonstration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#Adjusted-Parameters:">Adjusted Parameters:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Trajectory-Data:">Trajectory Data:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Density-Data:">Density Data:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Residual-Data:">Residual Data:</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Kamodo-GEODYN Documentation</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Demonstration</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/Demo__geodyn_output_explained.ipynb.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS for nbsphinx extension */
+
+/* remove conflicting styling from Sphinx themes */
+div.nbinput.container,
+div.nbinput.container div.prompt,
+div.nbinput.container div.input_area,
+div.nbinput.container div[class*=highlight],
+div.nbinput.container div[class*=highlight] pre,
+div.nboutput.container,
+div.nboutput.container div.prompt,
+div.nboutput.container div.output_area,
+div.nboutput.container div[class*=highlight],
+div.nboutput.container div[class*=highlight] pre {
+    background: none;
+    border: none;
+    padding: 0 0;
+    margin: 0;
+    box-shadow: none;
+}
+
+/* avoid gaps between output lines */
+div.nboutput.container div[class*=highlight] pre {
+    line-height: normal;
+}
+
+/* input/output containers */
+div.nbinput.container,
+div.nboutput.container {
+    display: -webkit-flex;
+    display: flex;
+    align-items: flex-start;
+    margin: 0;
+    width: 100%;
+}
+@media (max-width: 540px) {
+    div.nbinput.container,
+    div.nboutput.container {
+        flex-direction: column;
+    }
+}
+
+/* input container */
+div.nbinput.container {
+    padding-top: 5px;
+}
+
+/* last container */
+div.nblast.container {
+    padding-bottom: 5px;
+}
+
+/* input prompt */
+div.nbinput.container div.prompt pre {
+    color: #307FC1;
+}
+
+/* output prompt */
+div.nboutput.container div.prompt pre {
+    color: #BF5B3D;
+}
+
+/* all prompts */
+div.nbinput.container div.prompt,
+div.nboutput.container div.prompt {
+    width: 4.5ex;
+    padding-top: 5px;
+    position: relative;
+    user-select: none;
+}
+
+div.nbinput.container div.prompt > div,
+div.nboutput.container div.prompt > div {
+    position: absolute;
+    right: 0;
+    margin-right: 0.3ex;
+}
+
+@media (max-width: 540px) {
+    div.nbinput.container div.prompt,
+    div.nboutput.container div.prompt {
+        width: unset;
+        text-align: left;
+        padding: 0.4em;
+    }
+    div.nboutput.container div.prompt.empty {
+        padding: 0;
+    }
+
+    div.nbinput.container div.prompt > div,
+    div.nboutput.container div.prompt > div {
+        position: unset;
+    }
+}
+
+/* disable scrollbars on prompts */
+div.nbinput.container div.prompt pre,
+div.nboutput.container div.prompt pre {
+    overflow: hidden;
+}
+
+/* input/output area */
+div.nbinput.container div.input_area,
+div.nboutput.container div.output_area {
+    -webkit-flex: 1;
+    flex: 1;
+    overflow: auto;
+}
+@media (max-width: 540px) {
+    div.nbinput.container div.input_area,
+    div.nboutput.container div.output_area {
+        width: 100%;
+    }
+}
+
+/* input area */
+div.nbinput.container div.input_area {
+    border: 1px solid #e0e0e0;
+    border-radius: 2px;
+    background: #f5f5f5;
+}
+
+/* override MathJax center alignment in output cells */
+div.nboutput.container div[class*=MathJax] {
+    text-align: left !important;
+}
+
+/* override sphinx.ext.imgmath center alignment in output cells */
+div.nboutput.container div.math p {
+    text-align: left;
+}
+
+/* standard error */
+div.nboutput.container div.output_area.stderr {
+    background: #fdd;
+}
+
+/* ANSI colors */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-default-inverse-fg { color: #FFFFFF; }
+.ansi-default-inverse-bg { background-color: #000000; }
+
+.ansi-bold { font-weight: bold; }
+.ansi-underline { text-decoration: underline; }
+
+
+div.nbinput.container div.input_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight].math,
+div.nboutput.container div.output_area.rendered_html,
+div.nboutput.container div.output_area > div.output_javascript,
+div.nboutput.container div.output_area:not(.rendered_html) > img{
+    padding: 5px;
+}
+
+/* fix copybtn overflow problem in chromium (needed for 'sphinx_copybutton') */
+div.nbinput.container div.input_area > div[class^='highlight'],
+div.nboutput.container div.output_area > div[class^='highlight']{
+    overflow-y: hidden;
+}
+
+/* hide copybtn icon on prompts (needed for 'sphinx_copybutton') */
+.prompt a.copybtn {
+    display: none;
+}
+
+/* Some additional styling taken form the Jupyter notebook CSS */
+div.rendered_html table {
+  border: none;
+  border-collapse: collapse;
+  border-spacing: 0;
+  color: black;
+  font-size: 12px;
+  table-layout: fixed;
+}
+div.rendered_html thead {
+  border-bottom: 1px solid black;
+  vertical-align: bottom;
+}
+div.rendered_html tr,
+div.rendered_html th,
+div.rendered_html td {
+  text-align: right;
+  vertical-align: middle;
+  padding: 0.5em 0.5em;
+  line-height: normal;
+  white-space: normal;
+  max-width: none;
+  border: none;
+}
+div.rendered_html th {
+  font-weight: bold;
+}
+div.rendered_html tbody tr:nth-child(odd) {
+  background: #f5f5f5;
+}
+div.rendered_html tbody tr:hover {
+  background: rgba(66, 165, 245, 0.2);
+}
+
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="Demonstration">
+<h1>Demonstration<a class="headerlink" href="#Demonstration" title="Permalink to this headline">¶</a></h1>
+<p><strong>This notebook explains the data output from the GEODYN Starlette-SLR run.</strong></p>
+<p>First, load the data using the reading functions.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>%load_ext autoreload
+%autoreload 2
+
+import pandas as pd
+import numpy as np
+
+##################################
+# INPUT PARAMETERS:
+##################################
+sat_file = &#39;starlette&#39;
+arc1 = &#39;030914_2wk&#39;
+grav_id =&#39;goco05s&#39;
+local_path = &#39;/data/analysis/starlette_analysis/&#39;
+SAT_ID = 7501001
+
+##################################
+# PATH TO DENSITY MODEL RUN of Choice:
+##################################
+msis86_model = &#39;msis86&#39;
+path_to_msis86 = &#39;/data/runs_geodyn/st/results/&#39;+ grav_id+&#39;_&#39;+msis86_model+&#39;/&#39;
+
+
+
+
+import sys
+sys.path.insert(0, &#39;/data/analysis/util_funcs/py_starlette/&#39;)
+from a_ReadStarlette import ReadStarlette
+
+AdjustedParams, Trajectory, Density, Resids = ReadStarlette(arc1,
+                                                           sat_file,
+                                                           grav_id,
+                                                           local_path,
+                                                           path_to_msis86)
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+The base file name for this arc is: st030914_2wk.goco05s
+
+File exists: iieout
+        /data/runs_geodyn/st/results/goco05s_msis86/IIEOUT/st030914_2wk.goco05s
+File exists: ascii_xyz
+        /data/runs_geodyn/st/results/goco05s_msis86/XYZ_TRAJ/st030914_2wk.goco05s
+File exists: densityfil
+        /data/runs_geodyn/st/results/goco05s_msis86/DENSITY/st030914_2wk.goco05s
+
+ Loading data...
+
+Parameter adjustment data loaded
+Trajectory data loaded
+Density data loaded
+Residual data loaded
+</pre></div></div>
+</div>
+<div class="section" id="Adjusted-Parameters:">
+<h2>Adjusted Parameters:<a class="headerlink" href="#Adjusted-Parameters:" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>The Adjusted Parameters are read in from the <code class="docutils literal notranslate"><span class="pre">iieout</span></code> file (<code class="docutils literal notranslate"><span class="pre">Unit</span> <span class="pre">6</span></code>).</p></li>
+<li><p>These include the State Vector at the start of the ARC, drag coefficient (CD), the solar radiation coefficient (CR), and the adjusted empirical accelerations (GA).</p>
+<ul>
+<li><p>the CD is controlled/output by the DRAG card.</p></li>
+<li><p>the GA is ouput by the ACCEL9 card (the 9 parameter general acceleration)</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">AdjustedParams</span></code> is a dictionary in which the first dimension stores each geodyn run iteration:</p></li>
+</ul>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[42]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>AdjustedParams.keys()
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[42]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+dict_keys([1, 2, 3, 4, 5])
+</pre></div></div>
+</div>
+<p>And the 2nd dimension stores all of the adjusted parameters:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[43]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>AdjustedParams[5].keys()
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[43]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+dict_keys([&#39;0CD&#39;, &#39;0GA&#39;, &#39;0GA_t2&#39;, &#39;0XPOS&#39;, &#39;0YPOS&#39;, &#39;0ZPOS&#39;, &#39;0XVEL&#39;, &#39;0YVEL&#39;, &#39;0ZVEL&#39;])
+</pre></div></div>
+</div>
+<p>Each adjusted parameter then has the associated statistics:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">APRIORI</span>  <span class="n">VALUE</span>
+<span class="n">PREVIOUS</span> <span class="n">VALUE</span>
+<span class="n">CURRENT</span>  <span class="n">VALUE</span>
+<span class="n">TOTAL</span> <span class="n">DELTA</span>
+<span class="n">CURRENT</span> <span class="n">DELTA</span>
+<span class="n">APRIORI</span> <span class="n">SIGMA</span>
+<span class="n">CURRENT</span> <span class="n">SIGMA</span>
+</pre></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[44]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>AdjustedParams[5][&#39;0XPOS&#39;][&#39;CURRENT_VALUE&#39;]
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[44]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+-1228610.639773413
+</pre></div></div>
+</div>
+<p>In the case of CD and GA, there are multiple values for each, and an additional dictionary exists for each value</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[45]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>print(AdjustedParams[5][&#39;0GA&#39;].keys(),&#39;\n&#39;)
+
+print(AdjustedParams[5][&#39;0CD&#39;].keys())
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+dict_keys([&#39;0GA 9P 11&#39;, &#39;0GA 9P 12&#39;, &#39;0GA 9P 21&#39;, &#39;0GA 9P 22&#39;])
+
+dict_keys([&#39;T01&#39;, &#39;T02&#39;, &#39;T03&#39;, &#39;T04&#39;, &#39;T05&#39;, &#39;T06&#39;, &#39;T07&#39;, &#39;T08&#39;, &#39;T09&#39;, &#39;T10&#39;, &#39;T11&#39;, &#39;T12&#39;, &#39;T13&#39;, &#39;T14&#39;, &#39;T15&#39;, &#39;T16&#39;, &#39;T17&#39;, &#39;T18&#39;, &#39;T19&#39;, &#39;T20&#39;, &#39;T21&#39;, &#39;T22&#39;, &#39;T23&#39;, &#39;T24&#39;, &#39;T25&#39;, &#39;T26&#39;, &#39;T27&#39;, &#39;T28&#39;, &#39;T29&#39;, &#39;T30&#39;, &#39;T31&#39;, &#39;T32&#39;, &#39;T33&#39;, &#39;T34&#39;, &#39;T35&#39;, &#39;T36&#39;, &#39;T37&#39;, &#39;T38&#39;, &#39;T39&#39;, &#39;T40&#39;, &#39;T41&#39;, &#39;T42&#39;])
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[46]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>AdjustedParams[5][&#39;0GA&#39;][&#39;0GA 9P 11&#39;]
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[46]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+{&#39;APRIORI_VALUE&#39;: 0.0,
+ &#39;PREVIOUS_VALUE&#39;: 5.536419290656419e-11,
+ &#39;CURRENT_VALUE&#39;: 5.546253541325767e-11,
+ &#39;TOTAL_DELTA&#39;: -5.54625354133e-11,
+ &#39;CURRENT_DELTA&#39;: -9.83425066935e-14,
+ &#39;APRIORI_SIGMA&#39;: 1.0,
+ &#39;CURRENT_SIGMA&#39;: 1.6930522e-11}
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[47]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>AdjustedParams.keys()
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[47]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+dict_keys([1, 2, 3, 4, 5])
+</pre></div></div>
+</div>
+<p>And the 2nd dimension stores all of the adjusted parameters:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[48]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>AdjustedParams[5].keys()
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[48]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+dict_keys([&#39;0CD&#39;, &#39;0GA&#39;, &#39;0GA_t2&#39;, &#39;0XPOS&#39;, &#39;0YPOS&#39;, &#39;0ZPOS&#39;, &#39;0XVEL&#39;, &#39;0YVEL&#39;, &#39;0ZVEL&#39;])
+</pre></div></div>
+</div>
+</div>
+<div class="section" id="Trajectory-Data:">
+<h2>Trajectory Data:<a class="headerlink" href="#Trajectory-Data:" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>The trajectory data can come from multiple sources. <em>The official output should come from the binary orbit file, but that is not working as of January 2020.</em> Instead, we use the orbit file printout (ORBTVU card) to printout the trajectory data to an ascii file (<code class="docutils literal notranslate"><span class="pre">Unit</span> <span class="pre">10</span></code> for keplerian and <code class="docutils literal notranslate"><span class="pre">Unit</span> <span class="pre">08</span></code> for cartesian). These are then placed in the <code class="docutils literal notranslate"><span class="pre">KEP_TRAJ</span></code> and <code class="docutils literal notranslate"><span class="pre">XYZ_TRAJ</span></code> data directories before the temporary files are purged.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">Trajectory</span></code> structure is a dictionary in which the first dimension represents the different satellites, and the second dimension is a Pandas DataFrame containing the trajectory data from the <code class="docutils literal notranslate"><span class="pre">ORBTVU</span></code> card in which the first dimension stores each geodyn run iteration:</p></li>
+</ul>
+<p>Indexing the first dimension will show the satellites in the GEODYN run that were saved. They are saved according to their SAT_ID. Since the Starlette-SLR runs only contain the Starlette satellite, this is the only one saved.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[49]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>Trajectory.keys()
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[49]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+dict_keys([7501001])
+</pre></div></div>
+</div>
+<p>The trajectory data can then be indexed by SAT_ID to show the pandas dataframe containing the data. The stored variables can be found with the <code class="docutils literal notranslate"><span class="pre">.columns</span></code> method.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[52]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>print(Trajectory[7501001].columns)
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Index([&#39;YYMMDD&#39;, &#39;HHMM&#39;, &#39;SECONDS&#39;, &#39;X&#39;, &#39;Y&#39;, &#39;Z&#39;, &#39;XDOT&#39;, &#39;YDOT&#39;, &#39;ZDOT&#39;,
+       &#39;LAT&#39;, &#39;LONG&#39;, &#39;HEIGHT&#39;, &#39;timeHHMM&#39;, &#39;year&#39;, &#39;month&#39;, &#39;day&#39;, &#39;hours&#39;,
+       &#39;minutes&#39;, &#39;secs&#39;, &#39;Date&#39;],
+      dtype=&#39;object&#39;)
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[53]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>Trajectory[7501001].head()
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[53]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>YYMMDD</th>
+      <th>HHMM</th>
+      <th>SECONDS</th>
+      <th>X</th>
+      <th>Y</th>
+      <th>Z</th>
+      <th>XDOT</th>
+      <th>YDOT</th>
+      <th>ZDOT</th>
+      <th>LAT</th>
+      <th>LONG</th>
+      <th>HEIGHT</th>
+      <th>timeHHMM</th>
+      <th>year</th>
+      <th>month</th>
+      <th>day</th>
+      <th>hours</th>
+      <th>minutes</th>
+      <th>secs</th>
+      <th>Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2</th>
+      <td>30914</td>
+      <td>105</td>
+      <td>55.205719</td>
+      <td>-3902733.45</td>
+      <td>5158963.35</td>
+      <td>-3130061.00</td>
+      <td>-5675.94599</td>
+      <td>-1433.45008</td>
+      <td>4725.70967</td>
+      <td>-25.954786</td>
+      <td>118.024110</td>
+      <td>812276.80</td>
+      <td>0105</td>
+      <td>2003</td>
+      <td>09</td>
+      <td>14</td>
+      <td>01</td>
+      <td>05</td>
+      <td>55</td>
+      <td>2003-09-14 01:05:55</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>30914</td>
+      <td>106</td>
+      <td>15.005953</td>
+      <td>-4014288.94</td>
+      <td>5129496.49</td>
+      <td>-3035836.70</td>
+      <td>-5591.75463</td>
+      <td>-1542.86306</td>
+      <td>4791.45070</td>
+      <td>-25.120244</td>
+      <td>118.880387</td>
+      <td>811968.94</td>
+      <td>0106</td>
+      <td>2003</td>
+      <td>09</td>
+      <td>14</td>
+      <td>01</td>
+      <td>06</td>
+      <td>15</td>
+      <td>2003-09-14 01:06:15</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>30914</td>
+      <td>106</td>
+      <td>47.006428</td>
+      <td>-4190987.23</td>
+      <td>5077312.08</td>
+      <td>-2880862.22</td>
+      <td>-5450.70994</td>
+      <td>-1718.31837</td>
+      <td>4893.42231</td>
+      <td>-23.758977</td>
+      <td>120.237767</td>
+      <td>811607.96</td>
+      <td>0106</td>
+      <td>2003</td>
+      <td>09</td>
+      <td>14</td>
+      <td>01</td>
+      <td>06</td>
+      <td>47</td>
+      <td>2003-09-14 01:06:47</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>30914</td>
+      <td>107</td>
+      <td>13.806875</td>
+      <td>-4335433.07</td>
+      <td>5029307.46</td>
+      <td>-2748618.90</td>
+      <td>-5327.95616</td>
+      <td>-1863.82658</td>
+      <td>4974.68198</td>
+      <td>-22.607839</td>
+      <td>121.350810</td>
+      <td>811436.43</td>
+      <td>0107</td>
+      <td>2003</td>
+      <td>09</td>
+      <td>14</td>
+      <td>01</td>
+      <td>07</td>
+      <td>13</td>
+      <td>2003-09-14 01:07:13</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>30914</td>
+      <td>107</td>
+      <td>47.207484</td>
+      <td>-4510756.72</td>
+      <td>4964053.31</td>
+      <td>-2580843.47</td>
+      <td>-5169.22701</td>
+      <td>-2043.14535</td>
+      <td>5070.56125</td>
+      <td>-21.160247</td>
+      <td>122.709738</td>
+      <td>811390.75</td>
+      <td>0107</td>
+      <td>2003</td>
+      <td>09</td>
+      <td>14</td>
+      <td>01</td>
+      <td>07</td>
+      <td>47</td>
+      <td>2003-09-14 01:07:47</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+</div>
+<div class="section" id="Density-Data:">
+<h2>Density Data:<a class="headerlink" href="#Density-Data:" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>GEODYN does not actually have a built in method for printing out the density. As such, the density has been printd by modifying the <code class="docutils literal notranslate"><span class="pre">DRAG.f90</span></code> subroutine in the <code class="docutils literal notranslate"><span class="pre">IIE/MODS</span></code> directory. The modification consists of printing the density and trajectory data at each timestep of the GEODYN run.</p></li>
+<li><p>The density data is stored as an ascii file named <code class="docutils literal notranslate"><span class="pre">fort.99</span></code>, which is then stored to the <code class="docutils literal notranslate"><span class="pre">DENSITY</span></code>directory before the temporary files are purged.</p></li>
+<li><p>The density data saves the longitutde, latitude, altitude coordinates, and cartesian coordinates.</p></li>
+</ul>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[61]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>Density.columns
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[61]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Index([&#39;Elapsed Secs&#39;, &#39;YYMMDD&#39;, &#39;HHMMSS&#39;, &#39;Lat&#39;, &#39;Lon&#39;, &#39;Height (meters)&#39;,
+       &#39;rho (kg/m**3)&#39;, &#39;delta_rho (kg/m**3/m)&#39;, &#39;X&#39;, &#39;Y&#39;, &#39;Z&#39;, &#39;XDOT&#39;, &#39;YDOT&#39;,
+       &#39;ZDOT&#39;, &#39;timeHHMMSS&#39;, &#39;year&#39;, &#39;month&#39;, &#39;day&#39;, &#39;hours&#39;, &#39;minutes&#39;,
+       &#39;secs&#39;, &#39;Date&#39;],
+      dtype=&#39;object&#39;)
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[63]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>Density.head()
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[63]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Elapsed Secs</th>
+      <th>YYMMDD</th>
+      <th>HHMMSS</th>
+      <th>Lat</th>
+      <th>Lon</th>
+      <th>Height (meters)</th>
+      <th>rho (kg/m**3)</th>
+      <th>delta_rho (kg/m**3/m)</th>
+      <th>X</th>
+      <th>Y</th>
+      <th>...</th>
+      <th>YDOT</th>
+      <th>ZDOT</th>
+      <th>timeHHMMSS</th>
+      <th>year</th>
+      <th>month</th>
+      <th>day</th>
+      <th>hours</th>
+      <th>minutes</th>
+      <th>secs</th>
+      <th>Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>210.0</td>
+      <td>30914</td>
+      <td>434</td>
+      <td>45.6973</td>
+      <td>278.5740</td>
+      <td>1083058.594</td>
+      <td>1.623031e-15</td>
+      <td>0.0</td>
+      <td>182992.974</td>
+      <td>-5215697.130</td>
+      <td>...</td>
+      <td>-1841.620957</td>
+      <td>-1912.851416</td>
+      <td>000434</td>
+      <td>2003.0</td>
+      <td>9.0</td>
+      <td>14.0</td>
+      <td>0.0</td>
+      <td>4.0</td>
+      <td>34.0</td>
+      <td>2003-09-14 00:04:34</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>225.0</td>
+      <td>30914</td>
+      <td>449</td>
+      <td>45.3666</td>
+      <td>279.6052</td>
+      <td>1084271.860</td>
+      <td>1.606673e-15</td>
+      <td>0.0</td>
+      <td>284238.712</td>
+      <td>-5242756.035</td>
+      <td>...</td>
+      <td>-1766.174236</td>
+      <td>-1989.534319</td>
+      <td>000449</td>
+      <td>2003.0</td>
+      <td>9.0</td>
+      <td>14.0</td>
+      <td>0.0</td>
+      <td>4.0</td>
+      <td>49.0</td>
+      <td>2003-09-14 00:04:49</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>240.0</td>
+      <td>30914</td>
+      <td>504</td>
+      <td>45.0256</td>
+      <td>280.6232</td>
+      <td>1085455.504</td>
+      <td>1.590705e-15</td>
+      <td>0.0</td>
+      <td>385422.960</td>
+      <td>-5268680.634</td>
+      <td>...</td>
+      <td>-1690.382976</td>
+      <td>-2065.747643</td>
+      <td>000504</td>
+      <td>2003.0</td>
+      <td>9.0</td>
+      <td>14.0</td>
+      <td>0.0</td>
+      <td>5.0</td>
+      <td>4.0</td>
+      <td>2003-09-14 00:05:04</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>255.0</td>
+      <td>30914</td>
+      <td>519</td>
+      <td>44.6746</td>
+      <td>281.6279</td>
+      <td>1086609.356</td>
+      <td>1.575121e-15</td>
+      <td>0.0</td>
+      <td>486523.867</td>
+      <td>-5293465.880</td>
+      <td>...</td>
+      <td>-1614.263040</td>
+      <td>-2141.476196</td>
+      <td>000519</td>
+      <td>2003.0</td>
+      <td>9.0</td>
+      <td>14.0</td>
+      <td>0.0</td>
+      <td>5.0</td>
+      <td>19.0</td>
+      <td>2003-09-14 00:05:19</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>270.0</td>
+      <td>30914</td>
+      <td>534</td>
+      <td>44.3139</td>
+      <td>282.6193</td>
+      <td>1087733.252</td>
+      <td>1.559916e-15</td>
+      <td>0.0</td>
+      <td>587519.621</td>
+      <td>-5317106.961</td>
+      <td>...</td>
+      <td>-1537.830323</td>
+      <td>-2216.704901</td>
+      <td>000534</td>
+      <td>2003.0</td>
+      <td>9.0</td>
+      <td>14.0</td>
+      <td>0.0</td>
+      <td>5.0</td>
+      <td>34.0</td>
+      <td>2003-09-14 00:05:34</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 22 columns</p>
+</div></div>
+</div>
+</div>
+<div class="section" id="Residual-Data:">
+<h2>Residual Data:<a class="headerlink" href="#Residual-Data:" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Similar to the trajectory data, <em>the official output of the residuals should come from the binary residual file (Unit 19), but that is not working as of January 2020</em>. Instead, we read in the residuals that are printed in ascii formats to the <code class="docutils literal notranslate"><span class="pre">iieout</span></code> file using the <code class="docutils literal notranslate"><span class="pre">OBSVU</span></code> card.</p></li>
+<li><p>The residuals are saved as a Pandas DataFrame.</p></li>
+</ul>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[60]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>Resids
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[60]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>index</th>
+      <th>YYMMDD</th>
+      <th>HHMM</th>
+      <th>Sec-UTC-R</th>
+      <th>Observation</th>
+      <th>Residual</th>
+      <th>Ratio to sigma</th>
+      <th>Elev1</th>
+      <th>Elev2</th>
+      <th>OBS No.</th>
+      <th>...</th>
+      <th>timeHHMM</th>
+      <th>year</th>
+      <th>month</th>
+      <th>day</th>
+      <th>hours</th>
+      <th>minutes</th>
+      <th>secs</th>
+      <th>microsecs</th>
+      <th>Date</th>
+      <th>Ratio_to_sigma_fixed</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>30914</td>
+      <td>105</td>
+      <td>55.208831</td>
+      <td>933.052599576</td>
+      <td>-0.001484</td>
+      <td>-0.0015</td>
+      <td>58.485935</td>
+      <td>58.485839</td>
+      <td>1</td>
+      <td>...</td>
+      <td>0105</td>
+      <td>2003</td>
+      <td>09</td>
+      <td>14</td>
+      <td>01</td>
+      <td>05</td>
+      <td>55</td>
+      <td>208831</td>
+      <td>2003-09-14 01:05:55.208831</td>
+      <td>-0.0015</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1</td>
+      <td>30914</td>
+      <td>106</td>
+      <td>15.009306</td>
+      <td>1005.251863666</td>
+      <td>-0.000437</td>
+      <td>-0.0004</td>
+      <td>51.260530</td>
+      <td>51.260437</td>
+      <td>2</td>
+      <td>...</td>
+      <td>0106</td>
+      <td>2003</td>
+      <td>09</td>
+      <td>14</td>
+      <td>01</td>
+      <td>06</td>
+      <td>15</td>
+      <td>009306</td>
+      <td>2003-09-14 01:06:15.009306</td>
+      <td>-0.0004</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2</td>
+      <td>30914</td>
+      <td>106</td>
+      <td>47.010250</td>
+      <td>1145.739853454</td>
+      <td>-0.002657</td>
+      <td>-0.0027</td>
+      <td>41.550447</td>
+      <td>41.550361</td>
+      <td>3</td>
+      <td>...</td>
+      <td>0106</td>
+      <td>2003</td>
+      <td>09</td>
+      <td>14</td>
+      <td>01</td>
+      <td>06</td>
+      <td>47</td>
+      <td>010250</td>
+      <td>2003-09-14 01:06:47.010250</td>
+      <td>-0.0027</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>3</td>
+      <td>30914</td>
+      <td>107</td>
+      <td>13.811144</td>
+      <td>1279.798448021</td>
+      <td>-0.006932</td>
+      <td>-0.0069</td>
+      <td>35.007633</td>
+      <td>35.007553</td>
+      <td>4</td>
+      <td>...</td>
+      <td>0107</td>
+      <td>2003</td>
+      <td>09</td>
+      <td>14</td>
+      <td>01</td>
+      <td>07</td>
+      <td>13</td>
+      <td>811144</td>
+      <td>2003-09-14 01:07:13.811144</td>
+      <td>-0.0069</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>4</td>
+      <td>30914</td>
+      <td>107</td>
+      <td>47.212357</td>
+      <td>1461.073729804</td>
+      <td>-0.011274</td>
+      <td>-0.0113</td>
+      <td>28.408244</td>
+      <td>28.408171</td>
+      <td>5</td>
+      <td>...</td>
+      <td>0107</td>
+      <td>2003</td>
+      <td>09</td>
+      <td>14</td>
+      <td>01</td>
+      <td>07</td>
+      <td>47</td>
+      <td>212357</td>
+      <td>2003-09-14 01:07:47.212357</td>
+      <td>-0.0113</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>3999</th>
+      <td>5688</td>
+      <td>30927</td>
+      <td>2306</td>
+      <td>16.259539</td>
+      <td>1260.651605954</td>
+      <td>0.006996</td>
+      <td>0.0070</td>
+      <td>53.959755</td>
+      <td>53.959671</td>
+      <td>4000</td>
+      <td>...</td>
+      <td>2306</td>
+      <td>2003</td>
+      <td>09</td>
+      <td>27</td>
+      <td>23</td>
+      <td>06</td>
+      <td>16</td>
+      <td>259539</td>
+      <td>2003-09-27 23:06:16.259539</td>
+      <td>0.0070</td>
+    </tr>
+    <tr>
+      <th>4000</th>
+      <td>5689</td>
+      <td>30927</td>
+      <td>2306</td>
+      <td>46.014220</td>
+      <td>1374.565632664</td>
+      <td>0.002611</td>
+      <td>0.0026</td>
+      <td>46.639968</td>
+      <td>46.639884</td>
+      <td>4001</td>
+      <td>...</td>
+      <td>2306</td>
+      <td>2003</td>
+      <td>09</td>
+      <td>27</td>
+      <td>23</td>
+      <td>06</td>
+      <td>46</td>
+      <td>014220</td>
+      <td>2003-09-27 23:06:46.014220</td>
+      <td>0.0026</td>
+    </tr>
+    <tr>
+      <th>4001</th>
+      <td>5690</td>
+      <td>30927</td>
+      <td>2307</td>
+      <td>14.118743</td>
+      <td>1496.430957455</td>
+      <td>-0.001994</td>
+      <td>-0.0020</td>
+      <td>40.669100</td>
+      <td>40.669018</td>
+      <td>4002</td>
+      <td>...</td>
+      <td>2307</td>
+      <td>2003</td>
+      <td>09</td>
+      <td>27</td>
+      <td>23</td>
+      <td>07</td>
+      <td>14</td>
+      <td>118743</td>
+      <td>2003-09-27 23:07:14.118743</td>
+      <td>-0.0020</td>
+    </tr>
+    <tr>
+      <th>4002</th>
+      <td>5691</td>
+      <td>30927</td>
+      <td>2307</td>
+      <td>46.624060</td>
+      <td>1650.422940823</td>
+      <td>-0.006786</td>
+      <td>-0.0068</td>
+      <td>34.755223</td>
+      <td>34.755145</td>
+      <td>4003</td>
+      <td>...</td>
+      <td>2307</td>
+      <td>2003</td>
+      <td>09</td>
+      <td>27</td>
+      <td>23</td>
+      <td>07</td>
+      <td>46</td>
+      <td>624060</td>
+      <td>2003-09-27 23:07:46.624060</td>
+      <td>-0.0068</td>
+    </tr>
+    <tr>
+      <th>4003</th>
+      <td>5692</td>
+      <td>30927</td>
+      <td>2308</td>
+      <td>5.727222</td>
+      <td>1745.985693706</td>
+      <td>-0.003580</td>
+      <td>-0.0036</td>
+      <td>31.700982</td>
+      <td>31.700906</td>
+      <td>4004</td>
+      <td>...</td>
+      <td>2308</td>
+      <td>2003</td>
+      <td>09</td>
+      <td>27</td>
+      <td>23</td>
+      <td>08</td>
+      <td>5.</td>
+      <td>27222</td>
+      <td>2003-09-27 23:08:05.027222</td>
+      <td>-0.0036</td>
+    </tr>
+  </tbody>
+</table>
+<p>4004 rows × 21 columns</p>
+</div></div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="getting_started.html" class="btn btn-neutral float-left" title="Getting Started:" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, Zach Waldron
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

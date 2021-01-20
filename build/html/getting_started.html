@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Project Notes &mdash; Kamodo-GEODYN Documentation tbd documentation</title>
+  <title>Getting Started: &mdash; Kamodo-GEODYN Documentation tbd documentation</title>
   
 
   
@@ -38,8 +38,8 @@
     <link rel="author" title="About these documents" href="about.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Introduction to GEODYN" href="geodyn_intro.html" />
-    <link rel="prev" title="Project Overview" href="about.html" /> 
+    <link rel="next" title="Demonstration" href="Demo__geodyn_output_explained.html" />
+    <link rel="prev" title="Technical Tips" href="technicial_tips.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -86,16 +86,20 @@
             
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="about.html">Project Overview</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Project Notes</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#density-models-in-geodyn">Density Models in GEODYN</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="project_notes.html">Project Notes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="geodyn_intro.html">Introduction to GEODYN</a></li>
 <li class="toctree-l1"><a class="reference internal" href="geodyn_output.html">GEODYN Output</a></li>
 <li class="toctree-l1"><a class="reference internal" href="modify_subroutines.html">Modifying Subroutines:</a></li>
 <li class="toctree-l1"><a class="reference internal" href="geodyn_density_models.html">Atmospheric Density Models</a></li>
 <li class="toctree-l1"><a class="reference internal" href="technicial_tips.html">Technical Tips</a></li>
-<li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started:</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Getting Started:</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#analysis">Analysis:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#data-output-from-geodyn">Data Output from GEODYN:</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#running-geodyn-from-the-script">Running GEODYN from the script:</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="Demo__geodyn_output_explained.html">Demonstration</a></li>
 </ul>
 
@@ -143,13 +147,13 @@
     
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>Project Notes</li>
+      <li>Getting Started:</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="_sources/project_notes.md.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/getting_started.md.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -186,25 +190,44 @@
     text-align: unset;
 }
 </style>
-<div class="section" id="project-notes">
-<h1>Project Notes<a class="headerlink" href="#project-notes" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="density-models-in-geodyn">
-<h2>Density Models in GEODYN<a class="headerlink" href="#density-models-in-geodyn" title="Permalink to this headline">¶</a></h2>
-<p>As of December 2020, the current default thermospheric implementation in GEODYN is the Jacchia 1971 model, with options existing to use the Thermosphere Drag Model (DTM87), or the MSIS-86 Empirical Drag Model (MSIS86). These outdated models represent a source of error in the calculation of satellite drag during an orbit determination run.  The deficiency of the density model will be compensated by overfitting to other estimated parameters, such as drag coefficient, estimated accelerations, state vector, etc. This overfitting can lead to problems if one needs to maintain realistic values for the estimated parameters in order to predict a future orbit.</p>
-<p><strong>On Overfitting: [Sutton 2020, Private Communication]</strong><br />When using orbital determination (OD) and estimating lots of parameters, residuals may not always show an obvious improvement even when a much better density model is used. In such a case, the deficiency of the original model is compensated by other estimated parameters, maybe CD, maybe other terms. This overfitting can lead to problems if you care about more than just the residuals, i.e., if you need to maintain a realistic CD in order to predict a future orbit. For instance, if you estimate CD = 100 with a horrible thermosphere model, that value may not persist so well into the future.</p>
-<p><strong>Items to track when changing density models:</strong></p>
+<div class="section" id="getting-started">
+<h1>Getting Started:<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="analysis">
+<h2>Analysis:<a class="headerlink" href="#analysis" title="Permalink to this headline">¶</a></h2>
+<p>The analysis notebooks are located at the follow path on the bastian server:</p>
+<div class="highlight-editorconfig notranslate"><div class="highlight"><pre><span></span>/data/analysis/
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">/data/analysis/starlette_analysis</span></code> directory contains the notebooks that analyze the GEODYN output for the Starlette-SLR data.</p>
+</div>
+<div class="section" id="data-output-from-geodyn">
+<h2>Data Output from GEODYN:<a class="headerlink" href="#data-output-from-geodyn" title="Permalink to this headline">¶</a></h2>
+<p>With the addition of the Starlette-SLR run, the running configuration and data output location has been updated as follows:</p>
 <ul class="simple">
-<li><p>Density at the satellite orbit</p></li>
-<li><p>Residuals</p></li>
-<li><p>Trajectory (ephemeris) of the satellite</p></li>
-<li><p>Cd</p></li>
-<li><p>Other parameters that might are being estimated.</p>
-<ul>
-<li><p>What are the parameters that could be “soaking up” the thermosphere errors. To assess the thermosphere model, you’d want to keep these as few as possible to avoid overfitting.</p></li>
-<li><p>i.e. if you’re also estimating a solar radiation pressure coefficient, you’d want to know how it varies over time.</p></li>
+<li><p>Directory containing all Starllete scripts, input, and output:<code class="docutils literal notranslate"><span class="pre">/data/runs_geodyn/</span></code></p></li>
 </ul>
-</li>
+<p><strong>File Structure and Contents in <code class="docutils literal notranslate"><span class="pre">st/</span></code></strong>:</p>
+<ul class="simple">
+<li><p>The entire GEODYN run (data output and directory architecture) is controlled in the scripts.</p></li>
 </ul>
+<div class="highlight-editorconfig notranslate"><div class="highlight"><pre><span></span> atgrav       - atmospheric gravity files
+ ephem        - geodyn specific ephemeris
+ examples     - sample files to use as examples
+ g2b          - GEODYN G2B (observation file)
+ gravity      - gravity field file (grvfld.goco05s)
+ results      - GEODYN Ouput
+ scripts      - scripts for running GEODYN
+ setups       - input files for GOEDYN run (2week arcs)
+</pre></div>
+</div>
+<div class="section" id="running-geodyn-from-the-script">
+<h3>Running GEODYN from the script:<a class="headerlink" href="#running-geodyn-from-the-script" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Main geodyn script: <code class="docutils literal notranslate"><span class="pre">geodyn_st</span></code></p></li>
+<li><p>Script for running all density options: <code class="docutils literal notranslate"><span class="pre">run_all_dens</span></code></p></li>
+</ul>
+<p>TODO: add the script contents and functions here.</p>
+</div>
 </div>
 </div>
 
@@ -216,10 +239,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="geodyn_intro.html" class="btn btn-neutral float-right" title="Introduction to GEODYN" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="Demo__geodyn_output_explained.html" class="btn btn-neutral float-right" title="Demonstration" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="about.html" class="btn btn-neutral float-left" title="Project Overview" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="technicial_tips.html" class="btn btn-neutral float-left" title="Technical Tips" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
