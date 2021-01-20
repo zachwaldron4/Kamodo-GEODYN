@@ -4,7 +4,7 @@
 ## Analysis:
 
 The analysis notebooks are located at the follow path on the bastian server:
-```editorconfig
+```
 /data/analysis/
 ```
 
@@ -18,7 +18,7 @@ With the addition of the Starlette-SLR run, the running configuration and data o
 
 **File Structure and Contents in ``st/``**:
 - The entire GEODYN run (data output and directory architecture) is controlled in the scripts.
-```editorconfig
+```
  atgrav       - atmospheric gravity files
  ephem        - geodyn specific ephemeris
  examples     - sample files to use as examples
