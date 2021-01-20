@@ -97,7 +97,7 @@
 <li class="toctree-l1"><a class="reference internal" href="geodyn_density_models.html">Atmospheric Density Models</a></li>
 <li class="toctree-l1"><a class="reference internal" href="technicial_tips.html">Technical Tips</a></li>
 <li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started:</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Demo__geodyn_output_explained.html">Demonstration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/Demo__geodyn_output_explained.html">Demonstration: Reading Data</a></li>
 </ul>
 
             
@@ -196,20 +196,20 @@
 <li><p>To modify a subroutine, it must be placed in this directory, you then have to run the <code class="docutils literal notranslate"><span class="pre">xxx</span></code> script to repopulate the MODS directory with a new GEODYN executable. The new executable is <code class="docutils literal notranslate"><span class="pre">giie1810_gfortran</span></code>.  You then have to tell GEODYN to run from THIS executable when you run the <code class="docutils literal notranslate"><span class="pre">/RUNS/zzz</span></code> script:</p></li>
 </ul>
 <p>Change zzz script from:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># RUN IIE program</span>
-<span class="o">../</span><span class="n">IIE</span><span class="o">/</span><span class="n">ORIG</span><span class="o">/</span><span class="n">giie1810_gfortran</span><span class="o">&gt;</span><span class="n">iieout</span> <span class="mi">2</span><span class="o">&gt;</span><span class="n">iieerr</span>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span># RUN IIE program
+../IIE/ORIG/giie1810_gfortran&gt;iieout 2&gt;iieerr
 </pre></div>
 </div>
 <p>To:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># RUN IIE program</span>
-<span class="c1">#../IIE/ORIG/giie1810_gfortran&gt;iieout 2&gt;iieerr</span>
-<span class="o">../</span><span class="n">IIE</span><span class="o">/</span><span class="n">MODS</span><span class="o">/</span><span class="n">giie1810_gfortran</span><span class="o">&gt;</span><span class="n">iieout</span> <span class="mi">2</span><span class="o">&gt;</span><span class="n">iieerr</span>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span># RUN IIE program
+#../IIE/ORIG/giie1810_gfortran&gt;iieout 2&gt;iieerr
+../IIE/MODS/giie1810_gfortran&gt;iieout 2&gt;iieerr
 </pre></div>
 </div>
 <div class="section" id="including-density-output">
 <h2>Including Density Output:<a class="headerlink" href="#including-density-output" title="Permalink to this headline">¶</a></h2>
 <p>To output density along the orbit of the spacecraft, we will modify the <code class="docutils literal notranslate"><span class="pre">DRAG.f90</span></code> subroutine as follows:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>(line 430)
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>(line 430)
 !     ....JACCHIA 71 MODEL
       RHO=D71(RASAT)
       DRHODZ=0.D0
@@ -232,7 +232,7 @@ If on the last iteration, it prints the parameters to a file <code class="docuti
 <ul class="simple">
 <li><p>There was an error where the IIEOUT printout showed the that atmospheric model being used was “JAACHIA9999” when MSIS86 was selected.  The <code class="docutils literal notranslate"><span class="pre">SUMMRY.f90</span></code> subroutine was edited to fix this.</p></li>
 </ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>(Line 365)
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>(Line 365)
 !!!!  900 WRITE(IOUT6,10500) IYATDN(JATDEN)
 !!!!      WRITE(IUNT88,10500) IYATDN(JATDEN)
       IF(IATDN.EQ.2) WRITE(6,10551)

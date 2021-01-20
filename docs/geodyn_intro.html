@@ -108,7 +108,7 @@
 <li class="toctree-l1"><a class="reference internal" href="geodyn_density_models.html">Atmospheric Density Models</a></li>
 <li class="toctree-l1"><a class="reference internal" href="technicial_tips.html">Technical Tips</a></li>
 <li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started:</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Demo__geodyn_output_explained.html">Demonstration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/Demo__geodyn_output_explained.html">Demonstration: Reading Data</a></li>
 </ul>
 
             
@@ -203,19 +203,19 @@
 <p>A GEODYN run is based on the user inputs that get inputted into the run as a CARD.  The full set of CARDS is referred to as the deck. The deck is located at <code class="docutils literal notranslate"><span class="pre">RUNS&gt;INPUTS&gt;iisset_start</span></code> within our file structure. Information on each of the CARDS is in the Volume 3 Documentation.</p>
 <div class="section" id="aws-directory-structure">
 <h2>AWS Directory Structure:<a class="headerlink" href="#aws-directory-structure" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">IIE</span>  
-    <span class="n">ORIG</span><span class="o">/</span>
-        <span class="p">(</span><span class="n">thousands</span> <span class="n">of</span> <span class="n">subroutines</span><span class="p">)</span>
-    <span class="n">MODS</span><span class="o">/</span>
-        <span class="p">(</span><span class="nb">any</span> <span class="n">modifications</span> <span class="n">to</span> <span class="n">the</span> <span class="n">above</span> <span class="n">subroutines</span><span class="p">)</span>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>IIE  
+    ORIG/
+        (thousands of subroutines)
+    MODS/
+        (any modifications to the above subroutines)
         
-<span class="n">IIS</span>  
-    <span class="n">ORIG</span><span class="o">/</span>
-        <span class="p">(</span><span class="n">thousands</span> <span class="n">of</span> <span class="n">subroutines</span><span class="p">)</span>
-    <span class="n">MODS</span><span class="o">/</span>
-        <span class="p">(</span><span class="nb">any</span> <span class="n">modifications</span> <span class="n">to</span> <span class="n">the</span> <span class="n">above</span> <span class="n">subroutines</span><span class="p">)</span>
-<span class="n">RUNS</span>  
-    <span class="p">(</span><span class="n">output</span> <span class="ow">and</span> <span class="nb">input</span> <span class="n">files</span> <span class="k">for</span> <span class="n">GEODYN</span><span class="p">)</span>
+IIS  
+    ORIG/
+        (thousands of subroutines)
+    MODS/
+        (any modifications to the above subroutines)
+RUNS  
+    (output and input files for GEODYN)
 </pre></div>
 </div>
 <div class="section" id="iis">

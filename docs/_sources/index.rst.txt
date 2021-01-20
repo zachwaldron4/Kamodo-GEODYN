@@ -18,7 +18,7 @@ Welcome to the GEODYN-Kamodo Project documentation!
    geodyn_density_models.md
    technicial_tips.md
    getting_started.md
-   Demo__geodyn_output_explained
+   notebooks/Demo__geodyn_output_explained
 
 
 
