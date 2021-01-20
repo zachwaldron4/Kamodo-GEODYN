@@ -42,15 +42,15 @@ mathjax_config = {
 }
 
  # mathjax_config = app.config._raw_config.setdefault('mathjax_config', {})
-mathjax_config.setdefault(
-     'tex2jax',
-     {
-         'inlineMath': [['$', '$'], ['\\(', '\\)']],
-         'processEscapes': True,
-         'ignoreClass': 'document',
-         'processClass': 'math|output_area',
-     }
- )
+# mathjax_config.setdefault(
+#      'tex2jax',
+#      {
+#          'inlineMath': [['$', '$'], ['\\(', '\\)']],
+#          'processEscapes': True,
+#          'ignoreClass': 'document',
+#          'processClass': 'math|output_area',
+#      }
+#  )
 
 
 # Add any paths that contain templates here, relative to this directory.
