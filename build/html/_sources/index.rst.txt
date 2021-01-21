@@ -19,7 +19,7 @@ Welcome to the GEODYN-Kamodo Project documentation!
    technicial_tips.md
    getting_started.md
    notebooks/Demo__geodyn_output_explained
-
+   notebooks/Demo__compare_den_models
 
 
 
