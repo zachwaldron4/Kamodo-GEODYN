@@ -1,0 +1,689 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# Demonstration: Running Geodyn\n",
+    "\n",
+    "**Details:**\n",
+    "This notebook demonstrates how to run GEODYN from the command line.\n",
+    "\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Locations of requisite files and scripts\n",
+    "\n",
+    "#### GEODYN IIS and IIE executables:\n",
+    "The IIS and IIE executables can be found at the following locations:\n",
+    "\n",
+    "\n",
+    "\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "total 4\r\n",
+      "lrwxrwxrwx. 1 m_geodyn    7 Sep 16 20:03 \u001b[0m\u001b[48;5;232;38;5;9mGEODYN\u001b[0m -> \u001b[05;48;5;232;38;5;15m/geodyn\u001b[0m\r\n",
+      "drwxrwxr-x. 8 m_geodyn  115 Feb 19 16:52 \u001b[38;5;27mIIE\u001b[0m/\r\n",
+      "drwxrwxr-x. 4 m_geodyn   53 Feb  4 22:08 \u001b[38;5;27mIIS\u001b[0m/\r\n",
+      "drwxrwxr-x. 2 m_geodyn  182 Feb  2 20:37 \u001b[38;5;27mmodified_subroutines\u001b[0m/\r\n",
+      "drwxrwxr-x. 3 m_geodyn 4096 Dec 15 18:30 \u001b[38;5;27mRUNS\u001b[0m/\r\n"
+     ]
+    }
+   ],
+   "source": [
+    "ll /data/geodyn_code/"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "#### Setup Files (Unit 5) to read into GEODYN: \n",
+    "- Each arc has its own set of cards which can be edited to make changes.\n",
+    "- Each density model has its own `ATMDEN` card input"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 2,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "total 3692\r\n",
+      "-rw-rw-r--. 1 m_geodyn   5191 Jan 21 22:57 alldens_edit_script\r\n",
+      "drwxrwxr-x. 2 m_geodyn    198 Feb 23 00:36 \u001b[0m\u001b[38;5;27mdtm87_acceloff\u001b[0m/\r\n",
+      "drwxrwxr-x. 2 m_geodyn    198 Jan 18 23:07 \u001b[38;5;27mdtm87_accelon\u001b[0m/\r\n",
+      "-rw-rw-r--. 1 m_geodyn   2703 Jan 22 18:41 edit_script_singlearc_singleden\r\n",
+      "drwxrwxr-x. 2 m_geodyn    198 Feb 23 00:37 \u001b[38;5;27mjaachia71_acceloff\u001b[0m/\r\n",
+      "drwxrwxr-x. 2 m_geodyn    198 Jan 18 23:07 \u001b[38;5;27mjaachia71_accelon\u001b[0m/\r\n",
+      "drwxrwxr-x. 2 m_geodyn    198 Feb 23 00:35 \u001b[38;5;27mmsis_acceloff\u001b[0m/\r\n",
+      "drwxrwxr-x. 2 m_geodyn    198 Feb 16 19:07 \u001b[38;5;27mmsis_accelon\u001b[0m/\r\n",
+      "-rw-r--r--. 1 m_geodyn 470265 Jan  5 16:58 \u001b[38;5;9mst030914_2wk.bz2\u001b[0m\r\n",
+      "-rw-r--r--. 1 m_geodyn 469716 Dec 15 22:15 \u001b[38;5;9mst030928_2wk.bz2\u001b[0m\r\n",
+      "-rw-r--r--. 1 m_geodyn 469782 Dec 15 22:15 \u001b[38;5;9mst031012_2wk.bz2\u001b[0m\r\n",
+      "-rw-r--r--. 1 m_geodyn 470030 Dec 15 22:15 \u001b[38;5;9mst031026_2wk.bz2\u001b[0m\r\n",
+      "-rw-r--r--. 1 m_geodyn 470095 Dec 15 22:15 \u001b[38;5;9mst031109_2wk.bz2\u001b[0m\r\n",
+      "-rw-r--r--. 1 m_geodyn 469724 Dec 15 22:15 \u001b[38;5;9mst031123_2wk.bz2\u001b[0m\r\n",
+      "-rw-r--r--. 1 m_geodyn 470064 Dec 15 22:15 \u001b[38;5;9mst031207_2wk.bz2\u001b[0m\r\n",
+      "-rw-r--r--. 1 m_geodyn 469973 Dec 15 22:15 \u001b[38;5;9mst031221_2wk.bz2\u001b[0m\r\n"
+     ]
+    }
+   ],
+   "source": [
+    "ll /data/runs_geodyn/st/setups/"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 3,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "total 3680\r\n",
+      "-rw-r--r--. 1 m_geodyn 470726 Feb 16 19:06 \u001b[0m\u001b[38;5;9mst030914_2wk.bz2\u001b[0m\r\n",
+      "-rw-r--r--. 1 m_geodyn 469224 Jan 22 18:41 \u001b[38;5;9mst030928_2wk.bz2\u001b[0m\r\n",
+      "-rw-r--r--. 1 m_geodyn 469782 Jan 12 17:09 \u001b[38;5;9mst031012_2wk.bz2\u001b[0m\r\n",
+      "-rw-r--r--. 1 m_geodyn 470030 Jan 12 17:09 \u001b[38;5;9mst031026_2wk.bz2\u001b[0m\r\n",
+      "-rw-r--r--. 1 m_geodyn 470095 Jan 12 17:09 \u001b[38;5;9mst031109_2wk.bz2\u001b[0m\r\n",
+      "-rw-r--r--. 1 m_geodyn 469724 Jan 12 17:09 \u001b[38;5;9mst031123_2wk.bz2\u001b[0m\r\n",
+      "-rw-r--r--. 1 m_geodyn 470064 Jan 12 17:09 \u001b[38;5;9mst031207_2wk.bz2\u001b[0m\r\n",
+      "-rw-r--r--. 1 m_geodyn 469973 Jan 12 17:09 \u001b[38;5;9mst031221_2wk.bz2\u001b[0m\r\n"
+     ]
+    }
+   ],
+   "source": [
+    "ll /data/runs_geodyn/st/setups/msis_accelon/"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "#### Script that runs GEODYN: \n",
+    "The main script file (`geodyn_st`) that is used to organize the input/output files and directory structure as well as run GEODYN, can be found at the following location:"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 4,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "total 48\r\n",
+      "-rw-r--r--. 1 m_geodyn 10227 Feb 24 00:20 geodyn_st\r\n",
+      "-rw-r--r--. 1 m_geodyn 10301 Feb  8 23:40 msis2_geodyn_st\r\n",
+      "-rw-r--r--. 1 m_geodyn  7225 Dec 15 22:18 orig_geodyn_zach\r\n",
+      "-rw-rw-r--. 1 m_geodyn  8708 Feb 24 00:20 output_text.txt\r\n",
+      "-rw-rw-r--. 1 m_geodyn  2459 Feb 23 00:28 run_all_dens\r\n"
+     ]
+    }
+   ],
+   "source": [
+    "ll /data/runs_geodyn/st/scripts"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Geodyn is run as follows:\n",
+    "\n",
+    "`(base) [username]$ bash geodyn_st 2> output_text.txt`"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "#### GEODYN Output: \n",
+    "The script was used to set up different directories that contain output based on which Density model is being used, wether acceleration is on or off, etc."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 5,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "total 0\r\n",
+      "drwxrwxr-x.  4 m_geodyn  49 Feb 22 23:38 \u001b[0m\u001b[38;5;27mdtm87\u001b[0m/\r\n",
+      "drwxrwxr-x. 13 m_geodyn 159 Jan  5 16:42 \u001b[38;5;27mgoco05s\u001b[0m/\r\n",
+      "drwxrwxr-x. 14 m_geodyn 179 Jan 12 19:36 \u001b[38;5;27mgoco05s_dtm87\u001b[0m/\r\n",
+      "drwxrwxr-x. 14 m_geodyn 179 Jan 29 23:20 \u001b[38;5;27mgoco05s_dtm87_accelon\u001b[0m/\r\n",
+      "drwxrwxr-x. 14 m_geodyn 179 Jan 12 20:38 \u001b[38;5;27mgoco05s_jaachia71\u001b[0m/\r\n",
+      "drwxrwxr-x. 14 m_geodyn 179 Jan 29 23:56 \u001b[38;5;27mgoco05s_jaachia71_accelon\u001b[0m/\r\n",
+      "drwxrwxr-x. 14 m_geodyn 179 Feb 12 17:09 \u001b[38;5;27mgoco05s_msis00_accelon\u001b[0m/\r\n",
+      "drwxrwxr-x. 14 m_geodyn 179 Feb 10 21:44 \u001b[38;5;27mgoco05s_msis2_accelon\u001b[0m/\r\n",
+      "drwxrwxr-x. 15 m_geodyn 192 Jan 22 18:35 \u001b[38;5;27mgoco05s_msis86\u001b[0m/\r\n",
+      "drwxrwxr-x. 14 m_geodyn 179 Jan 26 19:23 \u001b[38;5;27mgoco05s_msis86_acceloff\u001b[0m/\r\n",
+      "drwxrwxr-x. 14 m_geodyn 179 Jan 25 19:01 \u001b[38;5;27mgoco05s_msis86_accelon\u001b[0m/\r\n",
+      "drwxrwxr-x.  4 m_geodyn  57 Feb 22 23:38 \u001b[38;5;27mjaachia71\u001b[0m/\r\n",
+      "drwxrwxr-x.  4 m_geodyn  51 Feb 22 23:38 \u001b[38;5;27mmsis00\u001b[0m/\r\n",
+      "drwxrwxr-x.  4 m_geodyn  49 Feb 22 23:26 \u001b[38;5;27mmsis2\u001b[0m/\r\n",
+      "drwxrwxr-x.  4 m_geodyn  51 Feb 22 23:38 \u001b[38;5;27mmsis86\u001b[0m/\r\n"
+     ]
+    }
+   ],
+   "source": [
+    "ll /data/runs_geodyn/st/results/"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 6,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "total 0\r\n",
+      "drwxrwxr-x. 14 m_geodyn 179 Feb 22 23:26 \u001b[0m\u001b[38;5;27mmsis2_acceloff\u001b[0m/\r\n",
+      "drwxrwxr-x. 14 m_geodyn 179 Feb 16 19:01 \u001b[38;5;27mmsis2_accelon\u001b[0m/\r\n"
+     ]
+    }
+   ],
+   "source": [
+    "ll /data/runs_geodyn/st/results/msis2/"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 7,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "total 0\r\n",
+      "drwxrwxr-x. 2 m_geodyn  6 Feb 16 19:01 \u001b[0m\u001b[38;5;27mall_outputs\u001b[0m/\r\n",
+      "drwxrwxr-x. 2 m_geodyn 34 Feb 23 01:34 \u001b[38;5;27mDENSITY\u001b[0m/\r\n",
+      "drwxrwxr-x. 3 m_geodyn 19 Feb 16 19:01 \u001b[38;5;27mEMAT\u001b[0m/\r\n",
+      "drwxrwxr-x. 2 m_geodyn 34 Feb 23 01:34 \u001b[38;5;27mIIEOUT\u001b[0m/\r\n",
+      "drwxrwxr-x. 2 m_geodyn 34 Feb 23 01:34 \u001b[38;5;27mIISSET\u001b[0m/\r\n",
+      "drwxrwxr-x. 2 m_geodyn 34 Feb 23 01:34 \u001b[38;5;27mKEP_TRAJ\u001b[0m/\r\n",
+      "drwxrwxr-x. 2 m_geodyn 39 Feb 16 19:25 \u001b[38;5;27morbits\u001b[0m/\r\n",
+      "drwxrwxr-x. 2 m_geodyn 38 Feb 16 19:02 \u001b[38;5;27mPUNCH\u001b[0m/\r\n",
+      "drwxrwxr-x. 2 m_geodyn 34 Feb 23 01:34 \u001b[38;5;27mRESIDS\u001b[0m/\r\n",
+      "drwxrwxr-x. 2 m_geodyn 34 Feb 23 01:34 \u001b[38;5;27msumry\u001b[0m/\r\n",
+      "drwxrwxr-x. 2 m_geodyn 34 Feb 23 01:34 \u001b[38;5;27mTELEM\u001b[0m/\r\n",
+      "drwxrwxr-x. 2 m_geodyn 34 Feb 23 01:34 \u001b[38;5;27mXYZ_TRAJ\u001b[0m/\r\n"
+     ]
+    }
+   ],
+   "source": [
+    "ll /data/runs_geodyn/st/results/msis2/msis2_accelon/"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "The files are named according to their satellite, arc time, and gravity series. `SAT` `ARC_TIME`.`GRAV_SERIES`"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 8,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "total 106224\r\n",
+      "-rw-rw-r--. 1 m_geodyn 108772092 Feb 23 01:34 st030914_2wk.goco05s\r\n"
+     ]
+    }
+   ],
+   "source": [
+    "ll /data/runs_geodyn/st/results/msis2/msis2_accelon/IIEOUT/"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Running GEODYN:\n",
+    "To make a GEODYN run, first navgate to the script, `geodyn_st`.\n",
+    "\n",
+    "`vim` into the script and edit the preamble to ensure the run parameters are as you want them.\n",
+    "\n",
+    "The run command is:\n",
+    "`(base) [username]$ bash geodyn_st 2> output_text.txt`\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "#### Inside the GEODYN script:\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 9,
+   "metadata": {
+    "scrolled": false
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "# printenv > output_text.txt\n",
+      "#set > output_text.txt  \n",
+      "set -x\n",
+      "SATELLITE=st\n",
+      "MATPRE=40\n",
+      "\n",
+      "### CHOOSE DENSITY MODEL:\n",
+      "#DEN_DIR=msis00\n",
+      "\n",
+      "DEN_DIR=msis00\n",
+      "IN_DEN_DIR=msis\n",
+      "\n",
+      "ACCELS=acceloff\n",
+      "ARC=${1:-st030914_2wk}\n",
+      "\n",
+      "#ARC=${1:-st030928_2wk}\n",
+      " \n",
+      "FTN05DIR=/data/runs_geodyn/st/setups/${IN_DEN_DIR}_${ACCELS}\n",
+      "INPUTDIR=$FTN05DIR\n",
+      "\n",
+      "SERIES=${DEN_DIR}_${ACCELS}\n",
+      "G2SDIR=/data/geodyn_code/IIS/ORIG\n",
+      "G2EDIR=/data/geodyn_code/IIE/MODS${GDYN_version}\n",
+      "EMATUDIR=/data/runs_geodyn/extra_dirs           \n",
+      "COMMONDIR=/data/runs_geodyn/extra_dirs                  \n",
+      "COMMONHD4DIR=/data/runs_geodyn/extra_dirs               \n",
+      "#STATIONDIR=/Volumes/PODA/system/stations                ### should I make this?\n",
+      "#SYSDIR=/home/m_geodyn\n",
+      "#ORISMBIASDIR=/Volumes/HD4/jwbeall/dor/j2/g2b/mbias \n",
+      "DIRGRAV=/data/runs_geodyn/st/gravity                       \n",
+      "#FTN05DIR=/data/runs_geodyn/st/setups            \n",
+      "DELDIR=/data/runs_geodyn/extra_dirs/deletes/$SATELLITE                 \n",
+      "G2BDIR=/data/runs_geodyn/$SATELLITE/g2b                   \n",
+      "ATGRAVDIR=/data/runs_geodyn/$SATELLITE/atgrav             \n",
+      "OUTPUTDIR=/data/runs_geodyn/$SATELLITE/results/${DEN_DIR}/${SERIES}                   \n",
+      "mkdir /data/runs_geodyn/$SATELLITE/results/${DEN_DIR}\n",
+      "/data/runs_geodyn/$SATELLITE/results/${DEN_DIR}/${SERIES}\n",
+      "mkdir $OUTPUTDIR\n",
+      "BINDIR=/data/runs_geodyn/extra_dirs/bin\n",
+      "mkdir /data/runs_geodyn/$SATELLITE/\n",
+      "mkdir /data/runs_geodyn/$SATELLITE/results\n",
+      "mkdir $OUTPUTDIR\n",
+      "\n",
+      "### INPUT FILES\n",
+      "### UNIT5 for GEODYN\n",
+      "SATID=${2-7501001}\n",
+      "ARCFIL=$ARC\n",
+      "SOLRADFIL=${ARCFIL}.goco05s\n",
+      "\n",
+      "### GEODYN DATA FILE (GEODYN2 BINARY FILE FOR OBSERVATIONS)\n",
+      "G2BFIL=${3:-starlette_03_slrg2b.rm0} \n",
+      "\n",
+      "### GRAVITY FIELD\n",
+      "GRAVITY=goco05s \n",
+      "\n",
+      "### ATMOSPHERIC GRAVITY\n",
+      "ATGRAVFIL=${4:-ATGRAV.glo-3HR_20030101-20080204_1860_AOD1B_0006.0090}\n",
+      "\n",
+      "\n",
+      "echo \"    Density Model:     \" $DEN_DIR\n",
+      "echo \"    GEODYN Version:    \" $GDYN_version\n",
+      "echo \"    Estimate GenAccel: \" $ACCELS\n",
+      "echo \"    ARC run:           \" $ARC\n",
+      "echo \"    Output directory:  \" $OUTPUTDIR\n",
+      "\n",
+      "\n",
+      "\n",
+      "mkdir /data/runs_geodyn/tmp/\n",
+      "mkdir /data/runs_geodyn/tmp/$SATELLITE\n",
+      "TMPDIR=/data/runs_geodyn/tmp/$SATELLITE/$SERIES \n",
+      "mkdir $TMPDIR\n",
+      "#echo $TMPDIR\n",
+      "#echo $PWD\n",
+      "\n",
+      "\n",
+      "\n",
+      "\n",
+      "###Create temporary directory to do GEODYN runs\n",
+      "mkdir $TMPDIR\n",
+      "chmod 777 $TMPDIR\n",
+      "#echo \"fichier grav \" $ATGRAVDIR/$ATGRAVFIL\n",
+      "\n",
+      "if  test -r $INPUTDIR/${ARCFIL}.bz2; then\n",
+      "  echo \"    INPUT file:        \" ${INPUTDIR}/${ARCFIL}.bz2\n",
+      " else\n",
+      "  echo \" INPUT FILE ${INPUTDIR}/${ARCFIL} not found.\"\n",
+      "  exit\n",
+      "fi\n",
+      "\n",
+      "#if  test -r $INPUTDIR/${ARCFIL}; then\n",
+      "#  echo \" INPUT file is \" ${INPUTDIR}/${ARCFIL}\n",
+      "# else\n",
+      "#  echo \" INPUT FILE ${INPUTDIR}/${ARCFIL} not found.\"\n",
+      "#  exit\n",
+      "#fi\n",
+      "\n",
+      "if test -r $G2BDIR/${G2BFIL}; then\n",
+      "#  echo \" FORT.40 file is \"$G2BDIR/${G2BFIL}\n",
+      "  echo \" \" \n",
+      " else\n",
+      " echo \" FORT.40 file\" $G2BFIL \"not found.\"\n",
+      " exit\n",
+      "fi\n",
+      "date\n",
+      "##\n",
+      "rm -rf $TMPDIR/${ARC}.$GRAVITY\n",
+      "mkdir $TMPDIR/${ARC}.$GRAVITY\n",
+      "chmod 777 $TMPDIR/${ARC}.$GRAVITY\n",
+      "cd $TMPDIR/${ARC}.$GRAVITY\n",
+      "echo $PWD\n",
+      "echo $ARC | cut -c 3-8 > YMD\n",
+      "YMD=`cat YMD`\n",
+      "echo $ARC |cut -c 3-4 > yr\n",
+      "YR=`cat yr`\n",
+      "\n",
+      "\n",
+      "rm -f EXAT01\n",
+      "rm -f iieout iisout ftn* phobos.ephem deimos.ephem\n",
+      "rm -f giie.* iieerr iiserr ftn* template1 template2\n",
+      "rm -f pin* res*  ht* *.ps *.pxy doppler.* del*  RESIDS.${1}\n",
+      "rm -f SAVE.*\n",
+      "mkdir $OUTPUTDIR/\n",
+      "#mkdir $OUTPUTDIR/XYZOUT/\n",
+      "#mkdir $OUTPUTDIR/PREPRO/\n",
+      "mkdir $OUTPUTDIR/sumry/\n",
+      "mkdir $OUTPUTDIR/orbits/\n",
+      "mkdir $OUTPUTDIR/RESIDS/\n",
+      "mkdir $OUTPUTDIR/PUNCH/\n",
+      "mkdir $OUTPUTDIR/IIEOUT/\n",
+      "mkdir $OUTPUTDIR/TELEM\n",
+      "mkdir $OUTPUTDIR/EMAT\n",
+      "mkdir $OUTPUTDIR/EMAT/scans\n",
+      "mkdir $OUTPUTDIR/IISSET\n",
+      "mkdir $OUTPUTDIR/all_outputs/\n",
+      "mkdir $OUTPUTDIR/DENSITY/\n",
+      "mkdir $OUTPUTDIR/XYZ_TRAJ/\n",
+      "mkdir $OUTPUTDIR/KEP_TRAJ/\n",
+      "\n",
+      "\n",
+      "\n",
+      "rm -f $OUTPUTDIR/DENSITY/${ARC}.${GRAVITY}\n",
+      "rm -f $OUTPUTDIR/DENSITY/${ARC}.${GRAVITY}.Z\n",
+      "rm -f $OUTPUTDIR/DENSITY/${ARC}.${GRAVITY}.gz\n",
+      "rm -f $OUTPUTDIR/DENSITY/${ARC}.${GRAVITY}.bz2\n",
+      "\n",
+      "rm -f $OUTPUTDIR/XYZ_TRAJ/${ARC}.${GRAVITY}\n",
+      "rm -f $OUTPUTDIR/XYZ_TRAJ/${ARC}.${GRAVITY}.Z\n",
+      "rm -f $OUTPUTDIR/XYZ_TRAJ/${ARC}.${GRAVITY}.gz\n",
+      "rm -f $OUTPUTDIR/XYZ_TRAJ/${ARC}.${GRAVITY}.bz2\n",
+      "\n",
+      "rm -f $OUTPUTDIR/all_outputs/${ARC}.${GRAVITY}\n",
+      "rm -f $OUTPUTDIR/all_outputs/${ARC}.${GRAVITY}.Z\n",
+      "rm -f $OUTPUTDIR/all_outputs/${ARC}.${GRAVITY}.gz\n",
+      "rm -f $OUTPUTDIR/all_outputs/${ARC}.${GRAVITY}.bz2\n",
+      "\n",
+      "rm -f $OUTPUTDIR/KEP_TRAJ/${ARC}.${GRAVITY}\n",
+      "rm -f $OUTPUTDIR/KEP_TRAJ/${ARC}.${GRAVITY}.Z\n",
+      "rm -f $OUTPUTDIR/KEP_TRAJ/${ARC}.${GRAVITY}.gz\n",
+      "rm -f $OUTPUTDIR/KEP_TRAJ/${ARC}.${GRAVITY}.bz2\n",
+      "\n",
+      "\n",
+      "#rm -f $OUTPUTDIR/XYZOUT/${ARC}.${GRAVITY}\n",
+      "rm -f $OUTPUTDIR/orbits/${ARC}.${GRAVITY}\n",
+      "rm -f $OUTPUTDIR/orbits/${ARC}.${GRAVITY}.Z\n",
+      "rm -f $OUTPUTDIR/orbits/${ARC}.${GRAVITY}.gz\n",
+      "rm -f $OUTPUTDIR/IIEOUT/${ARC}.${GRAVITY}\n",
+      "rm -f $OUTPUTDIR/IIEOUT/${ARC}.${GRAVITY}.Z\n",
+      "rm -f $OUTPUTDIR/IIEOUT/${ARC}.${GRAVITY}.bz2\n",
+      "rm -f $OUTPUTDIR/sumry/${ARC}.${GRAVITY} \n",
+      "#rm -f $OUTPUTDIR/XYZOUT/${ARC}.${GRAVITY}\n",
+      "#rm -f $OUTPUTDIR/XYZOUT/${ARC}.${GRAVITY}.Z\n",
+      "#rm -f $OUTPUTDIR/XYZOUT/${ARC}.${GRAVITY}.bz2 \n",
+      "rm -f $OUTPUTDIR/RESIDS/${ARC}.${GRAVITY}\n",
+      "rm -f $OUTPUTDIR/RESIDS/${ARC}.${GRAVITY}.Z\n",
+      "rm -f $OUTPUTDIR/RESIDS/${ARC}.${GRAVITY}.gz\n",
+      "\n",
+      "rm -f $OUTPUTDIR/IISSET/${ARC}.${GRAVITY}\n",
+      "rm -f $OUTPUTDIR/IISSET/${ARC}.${GRAVITY}.Z\n",
+      "rm -f $OUTPUTDIR/IISSET/${ARC}.${GRAVITY}.gz\n",
+      "rm -f $OUTPUTDIR/IISSET/${ARC}.${GRAVITY}.bz2\n",
+      "\n",
+      "rm -f $OUTPUTDIR/PUNCH/${ARC}.${GRAVITY}\n",
+      "rm -f $OUTPUTDIR/TELEM/${ARC}.${GRAVITY}\n",
+      "rm -f $OUTPUTDIR/EMAT/${ARC}.${GRAVITY}\n",
+      "rm -f $OUTPUTDIR/EMAT/scans/scan.${ARC}.${GRAVITY}\n",
+      "rm -f $OUTPUTDIR/EMAT/scans/scan.${ARC}.${GRAVITY}.Z\n",
+      "#\n",
+      "#\n",
+      "rm -f dum2 dum1 dum3\n",
+      "cp $INPUTDIR/${ARCFIL}.bz2 inputfile.bz2 \n",
+      "bunzip2 inputfile.bz2\n",
+      "### Construct Common Setup\n",
+      "######################\n",
+      "ln -s  ${G2BDIR}/${G2BFIL} ftn40\n",
+      "\n",
+      "# get the gravity field\t\t\t\t\n",
+      "cp ${DIRGRAV}/grvfld.${GRAVITY} ftn12\n",
+      "!head ftn12\n",
+      "if [ $YR -ge 0  -a $YR -lt 18 ]; then \n",
+      "ln -s /data/runs_geodyn/st/ephem/ephem1421.data ftn01\n",
+      "fi\n",
+      "#if [ $YR -ge 18 -a $YR -le 25 ]; then \n",
+      "#ln -s  /Users/geodyn/SUPPORT/ephem1430.data_2025 ftn01\n",
+      "#fi\n",
+      "#if [ $YR -ge 51  ]; then \n",
+      "#ln -s /Users/geodyn/SUPPORT/ephem1421.data ftn01\n",
+      "#fi\n",
+      "\n",
+      "##\n",
+      "cp /data/geodyn_code/RUNS/INPUTS/gdntable.data ftn02      #/Users/geodyn/SUPPORT/DAILY_TABLES/gdntable.data ftn02   # do i need to grab the new ones of these?\n",
+      "##\n",
+      "mv inputfile giis.input\n",
+      "cp giis.input ftn05\n",
+      "#\n",
+      "##ATGRAV information goes on unit18\n",
+      "#echo \"voila le fichier\" $ATGRAVDIR/$ATGRAVFIL\n",
+      "\n",
+      "ln -s $ATGRAVDIR/$ATGRAVFIL fort.18\n",
+      "\n",
+      "#echo \"this is the file loc\"\n",
+      "#pwd\n",
+      "#date\n",
+      "#\n",
+      "$G2SDIR/giis2002_gfortran > iisout 2>iiserr\n",
+      "\n",
+      "date\n",
+      "##Save the Interface files from 2s. Then cleanup temporary files.\n",
+      "mv ftn41 giie.ft12\n",
+      "mv ftn11 giie.ft11\n",
+      "## exit 0\n",
+      "rm -f ftn* fort.*\n",
+      "echo \" #\"\n",
+      "echo \" #\t\tEnd of IIS\"\n",
+      "echo \" #\"\n",
+      "echo \" #\t\tRun IIE\"\n",
+      "echo \" #\"\n",
+      "#\n",
+      "##Interface files in 2e must be ftn11, ftn12\n",
+      "cp giie.ft11 ftn11\n",
+      "cp giie.ft12 ftn12\n",
+      "# ramp load module (2e)\n",
+      "date\n",
+      "$G2EDIR/giie2002_gfortran >iieout 2>iieerr\n",
+      "echo \" #                End of IIE\"\n",
+      "date\n",
+      "\n",
+      "### PERL utility to get updated punch from geodyn output\n",
+      "#####Does not update EPOCH cards. Use GEODYN punch file (ftn07)\n",
+      "#####To get updated EPOCH cards and Elements.\n",
+      "##### This turn_arc_params.pl utility works on the entire setup;\n",
+      "##### -It will not work on the arc setup only.\n",
+      "##\n",
+      "/users/flemoine/bin/turn_arc_params.pl giis.input iieout 0 -1\n",
+      "cat iieerr iieout > blob\n",
+      "date\n",
+      "rm -f fort.11 fort.12 fort.13 fort.14\n",
+      "cat iisout iiserr iieout iieerr > IIEOUT.${ARC}.${GRAVITY}\n",
+      "mv fort.9 sumry\n",
+      "mv fort.19 Resid\n",
+      "cat fort.7 ftn07 > punch.gdn\n",
+      "fgrep EPOCH punch.gdn > sumry1\n",
+      "cat sumry1 sumry > blob\n",
+      "mv blob sumry\n",
+      "mv fort.71 emat\n",
+      "mv ftn97 telem\n",
+      "mv ftn08 xyzout\n",
+      "mv ftn10 aeiout\n",
+      "mv fort.8 ascii_xyz\n",
+      "mv fort.10 ascii_kep\n",
+      "mv fort.30 orbfil\n",
+      "mv fort.31 orbfil2\n",
+      "mv fort.99 densityfil\n",
+      "rm -f slvtmp* ftn* fort.*\n",
+      "$EMATUDIR/ematu <<EOF 2>err >output\n",
+      "emat\n",
+      "2\n",
+      "EOF\n",
+      "cat err output > blob\n",
+      "mv blob output.scan\n",
+      "\n",
+      "echo \" #               Finished renaming files\"\n",
+      "\n",
+      "rm -r WORK\n",
+      "rm -f $OUTPUTDIR/orbits/${ARC}.${GRAVITY}\n",
+      "rm -f $OUTPUTDIR/orbits/${ARC}.${GRAVITY}.Z\n",
+      "rm -f $OUTPUTDIR/orbits/${ARC}.${GRAVITY}.gz\n",
+      "\n",
+      "rm -f  $OUTPUTDIR/sumry/${ARC}.${GRAVITY} \n",
+      "rm -f  $OUTPUTDIR/RESIDS/${ARC}.${GRAVITY}\n",
+      "rm -f  $OUTPUTDIR/RESIDS/${ARC}.${GRAVITY}.Z\n",
+      "rm -f  $OUTPUTDIR/RESIDS/${ARC}.${GRAVITY}.gz\n",
+      "\n",
+      "\n",
+      "rm -f  $OUTPUTDIR/IIEOUT/${ARC}.${GRAVITY}\n",
+      "rm -f  $OUTPUTDIR/IIEOUT/${ARC}.${GRAVITY}.Z\n",
+      "rm -f  $OUTPUTDIR/IIEOUT/${ARC}.${GRAVITY}.bz2\n",
+      "rm -f  $OUTPUTDIR/PUNCH/${ARC}.${GRAVITY}\n",
+      "rm -f  $OUTPUTDIR/EMAT/${ARC}.${GRAVITY}\n",
+      "rm -f  $OUTPUTDIR/EMAT/scans/scan.${ARC}.${GRAVITY}\n",
+      "rm -f  $OUTPUTDIR/EMAT/scans/scan.${ARC}.${GRAVITY}.Z\n",
+      "rm -f  $OUTPUTDIR/EMAT/scans/scan.${ARC}.${GRAVITY}.bz2\n",
+      "\n",
+      "rm -f $OUTPUTDIR/all_outputs/${ARC}.${GRAVITY}\n",
+      "rm -f $OUTPUTDIR/all_outputs/${ARC}.${GRAVITY}.Z\n",
+      "rm -f $OUTPUTDIR/all_outputs/${ARC}.${GRAVITY}.gz\n",
+      "\n",
+      "rm -f $OUTPUTDIR/DENSITY/${ARC}.${GRAVITY}\n",
+      "rm -f $OUTPUTDIR/DENSITY/${ARC}.${GRAVITY}.Z\n",
+      "rm -f $OUTPUTDIR/DENSITY/${ARC}.${GRAVITY}.gz\n",
+      "\n",
+      "rm -f $OUTPUTDIR/XYZ_TRAJ/${ARC}.${GRAVITY}\n",
+      "rm -f $OUTPUTDIR/XYZ_TRAJ/${ARC}.${GRAVITY}.Z\n",
+      "rm -f $OUTPUTDIR/XYZ_TRAJ/${ARC}.${GRAVITY}.gz\n",
+      "rm -f $OUTPUTDIR/KEP_TRAJ/${ARC}.${GRAVITY}\n",
+      "rm -f $OUTPUTDIR/KEP_TRAJ/${ARC}.${GRAVITY}.Z\n",
+      "rm -f $OUTPUTDIR/KEP_TRAJ/${ARC}.${GRAVITY}.gz\n",
+      "\n",
+      "echo \" #               Finished removing files\"\n",
+      "\n",
+      "##\n",
+      "cp giis.input  $OUTPUTDIR/IISSET/${ARC}.${GRAVITY}\n",
+      "#bzip2          $OUTPUTDIR/IISSET/${ARC}.${GRAVITY}\n",
+      "\n",
+      "cp output.scan $OUTPUTDIR/EMAT/scans/scan.${ARC}.${GRAVITY}\n",
+      "#bzip2          $OUTPUTDIR/EMAT/scans/scan.${ARC}.${GRAVITY}\n",
+      "cp emat  $OUTPUTDIR/EMAT/${ARC}.${GRAVITY}\n",
+      "cp sumry $OUTPUTDIR/sumry/${ARC}.${GRAVITY} \n",
+      "cp Resid $OUTPUTDIR/RESIDS/${ARC}.${GRAVITY}\n",
+      "cp punch $OUTPUTDIR/PUNCH/${ARC}.${GRAVITY}\n",
+      "cp punch.gdn   $OUTPUTDIR/PUNCH/${ARC}.${GRAVITY}.gdn\n",
+      "mv IIEOUT.${ARC}.${GRAVITY} $OUTPUTDIR/IIEOUT/${ARC}.${GRAVITY}\n",
+      "\n",
+      "cp orbfil $OUTPUTDIR/orbits/${ARC}.${GRAVITY}_orb1\n",
+      "cp orbfil2 $OUTPUTDIR/orbits/${ARC}.${GRAVITY}_orb2\n",
+      "\n",
+      "mv telem   $OUTPUTDIR/TELEM/${ARC}.${GRAVITY}\n",
+      "\n",
+      "cp densityfil $OUTPUTDIR/DENSITY/${ARC}.${GRAVITY}\n",
+      "#cp xyzout $OUTPUTDIR/all_outputs/${ARC}.${GRAVITY}\n",
+      "#cp aeiout $OUTPUTDIR/all_outputs/${ARC}.${GRAVITY}\n",
+      "cp ascii_xyz $OUTPUTDIR/XYZ_TRAJ/${ARC}.${GRAVITY}\n",
+      "cp ascii_xyz $OUTPUTDIR/KEP_TRAJ/${ARC}.${GRAVITY}\n",
+      "\n",
+      "echo \" #               Finished copying files to outputdir\"\n",
+      "#rm -f $OUTPUTDIR/XYZOUT/${ARC}.${GRAVITY}\n",
+      "#rm -f $OUTPUTDIR/XYZOUT/${ARC}.${GRAVITY}.Z\n",
+      "#rm -f $OUTPUTDIR/XYZOUT/${ARC}.${GRAVITY}.bz2\n",
+      "#mv xyzout  $OUTPUTDIR/XYZOUT/${ARC}.${GRAVITY}\n",
+      "#mv aeiout  $OUTPUTDIR/AEIOUT/${ARC}.${GRAVITY}\n",
+      "#compress $OUTPUTDIR/XYZOUT/${ARC}.${GRAVITY}\n",
+      "##\n",
+      "cd ..\n",
+      "rm -rf $TMPDIR/${ARC}.${GRAVITY}\n",
+      "\n",
+      "echo \" #***************End of Script\"\n",
+      "\n"
+     ]
+    }
+   ],
+   "source": [
+    "script_path = '/data/runs_geodyn/st/scripts/geodyn_st'\n",
+    "\n",
+    "text_file = open(script_path)\n",
+    "file_content = text_file.read()\n",
+    "print(file_content)\n",
+    "text_file.close()"
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.8.5"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 4
+}
