@@ -12,14 +12,13 @@ Welcome to the GEODYN-Kamodo Project documentation!
 
    about.md
    project_notes.md
-   geodyn_intro.md
-   geodyn_output.md
    modify_subroutines.md
-   geodyn_density_models.md
    technicial_tips.md
-   getting_started.md
+   notebooks/Demo__Run_Geodyn
+   notebooks/Demo__geodyn_setup_file
    notebooks/Demo__geodyn_output_explained
    notebooks/Demo__compare_den_models
+   notebooks/Demo__compare_msis_models
 
 
 

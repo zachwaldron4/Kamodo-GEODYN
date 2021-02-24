@@ -31,6 +31,8 @@
         <script src="_static/doctools.js"></script>
         <script src="_static/language_data.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"equationNumbers": {"autoNumber": "AMS", "useLabelIds": true}}, "tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -86,14 +88,13 @@
               <ul>
 <li class="toctree-l1"><a class="reference internal" href="about.html">Project Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="project_notes.html">Project Notes</a></li>
-<li class="toctree-l1"><a class="reference internal" href="geodyn_intro.html">Introduction to GEODYN</a></li>
-<li class="toctree-l1"><a class="reference internal" href="geodyn_output.html">GEODYN Output</a></li>
 <li class="toctree-l1"><a class="reference internal" href="modify_subroutines.html">Modifying Subroutines:</a></li>
-<li class="toctree-l1"><a class="reference internal" href="geodyn_density_models.html">Atmospheric Density Models</a></li>
 <li class="toctree-l1"><a class="reference internal" href="technicial_tips.html">Technical Tips</a></li>
-<li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started:</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/Demo__Run_Geodyn.html">Demonstration: Running Geodyn</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/Demo__geodyn_setup_file.html">Demonstration: Setup File</a></li>
 <li class="toctree-l1"><a class="reference internal" href="notebooks/Demo__geodyn_output_explained.html">Demonstration: Reading Data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="notebooks/Demo__compare_den_models.html">Demonstration: Compare Density Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/Demo__compare_msis_models.html">Demonstration for Comparing the MSIS model versions in GEODYN</a></li>
 </ul>
 
             
@@ -198,19 +199,9 @@
 <li class="toctree-l2"><a class="reference internal" href="project_notes.html#density-models-in-geodyn">Density Models in GEODYN</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="geodyn_intro.html">Introduction to GEODYN</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="geodyn_intro.html#aws-directory-structure">AWS Directory Structure:</a></li>
-<li class="toctree-l2"><a class="reference internal" href="geodyn_intro.html#runs">RUNS</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="geodyn_output.html">GEODYN Output</a></li>
 <li class="toctree-l1"><a class="reference internal" href="modify_subroutines.html">Modifying Subroutines:</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="modify_subroutines.html#including-density-output">Including Density Output:</a></li>
 <li class="toctree-l2"><a class="reference internal" href="modify_subroutines.html#other-modifications">Other Modifications:</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="geodyn_density_models.html">Atmospheric Density Models</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="geodyn_density_models.html#iss-tracked-with-gps-run">ISS tracked with GPS run:</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="technicial_tips.html">Technical Tips</a><ul>
@@ -218,9 +209,14 @@
 <li class="toctree-l2"><a class="reference internal" href="technicial_tips.html#using-git">Using Git</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started:</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="getting_started.html#analysis">Analysis:</a></li>
-<li class="toctree-l2"><a class="reference internal" href="getting_started.html#data-output-from-geodyn">Data Output from GEODYN:</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/Demo__Run_Geodyn.html">Demonstration: Running Geodyn</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/Demo__Run_Geodyn.html#Locations-of-requisite-files-and-scripts">Locations of requisite files and scripts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/Demo__Run_Geodyn.html#Running-GEODYN:">Running GEODYN:</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/Demo__geodyn_setup_file.html">Demonstration: Setup File</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/Demo__geodyn_setup_file.html#Location">Location</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/Demo__geodyn_setup_file.html#CONDRG">CONDRG</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="notebooks/Demo__geodyn_output_explained.html">Demonstration: Reading Data</a><ul>
@@ -234,6 +230,16 @@
 <li class="toctree-l2"><a class="reference internal" href="notebooks/Demo__compare_den_models.html#Drag-Coefficient-Comparison">Drag Coefficient Comparison</a></li>
 <li class="toctree-l2"><a class="reference internal" href="notebooks/Demo__compare_den_models.html#Compare-density-along-the-orbit">Compare density along the orbit</a></li>
 <li class="toctree-l2"><a class="reference internal" href="notebooks/Demo__compare_den_models.html#Compare-residuals">Compare residuals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/Demo__compare_den_models.html#Compare-Trajectories:">Compare Trajectories:</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/Demo__compare_msis_models.html">Demonstration for Comparing the MSIS model versions in GEODYN</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/Demo__compare_msis_models.html#Input-the-Parameters-of-the-Starlette-SLR-GEODYN-run:">Input the Parameters of the Starlette-SLR GEODYN run:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/Demo__compare_msis_models.html#Load-the-simulation-output-for-each-density-model">Load the simulation output for each density model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/Demo__compare_msis_models.html#Compare-the-Coefficient-of-Drag">Compare the Coefficient of Drag</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/Demo__compare_msis_models.html#Orbit-Sampled-Density-from-Models">Orbit Sampled Density from Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/Demo__compare_msis_models.html#Residuals-(obervation-residuals)">Residuals (obervation residuals)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/Demo__compare_msis_models.html#Percent-Difference-in-Density-Output">Percent Difference in Density Output</a></li>
 </ul>
 </li>
 </ul>
