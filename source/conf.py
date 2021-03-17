@@ -18,7 +18,7 @@
 # -- Project information -----------------------------------------------------
 
 project = 'Kamodo-GEODYN Documentation'
-copyright = '2020, Zach Waldron'
+copyright = '2021, Zach Waldron'
 author = 'Zach Waldron'
 
 # The full version, including alpha/beta/rc tags
@@ -78,7 +78,9 @@ source_suffix = {
 import sphinx_rtd_theme
 html_theme = "sphinx_rtd_theme"
 
-
+#html_theme_options = {
+#    "collapse_navigation" : False
+#}
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,

@@ -14,6 +14,10 @@ Welcome to the GEODYN-Kamodo Project documentation!
    project_notes.md
    modify_subroutines.md
    technicial_tips.md
+
+.. toctree::
+   :maxdepth: 2
+
    notebooks/Demo__Run_Geodyn
    notebooks/Demo__geodyn_setup_file
    notebooks/Demo__geodyn_output_explained
