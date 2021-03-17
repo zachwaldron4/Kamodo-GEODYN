@@ -1,8 +1,6 @@
 Notebooks
 =========
 
-.. include:: /data/geodyn_proj/analysis/starlette_analysis/Demos_do_not_change/Demo__Run_Geodyn
-
-.. toctree:: 
+.. toctree:: Notebooks
     :maxdepth: 1
-    Demo__Run_Geodyn
+     Demo__Run_Geodyn
