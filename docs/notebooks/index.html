@@ -7,12 +7,12 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>GEODYN Output &mdash; Kamodo-GEODYN Documentation tbd documentation</title>
+  <title>Notebooks &mdash; Kamodo-GEODYN Documentation tbd documentation</title>
   
 
   
-  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
 
   
   
@@ -24,22 +24,23 @@
 
   
   <!--[if lt IE 9]>
-    <script src="_static/js/html5shiv.min.js"></script>
+    <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
     
-      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
-        <script src="_static/doctools.js"></script>
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     
-    <script type="text/javascript" src="_static/js/theme.js"></script>
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
 
     
-    <link rel="author" title="About these documents" href="about.html" />
-    <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" /> 
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Technical Tips" href="../technicial_tips.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -53,7 +54,7 @@
           
 
           
-            <a href="index.html" class="icon icon-home"> Kamodo-GEODYN Documentation
+            <a href="../index.html" class="icon icon-home"> Kamodo-GEODYN Documentation
           
 
           
@@ -66,7 +67,7 @@
 
           
 <div role="search">
-  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
@@ -85,13 +86,13 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="about.html">Project Overview</a></li>
-<li class="toctree-l1"><a class="reference internal" href="project_notes.html">Project Notes</a></li>
-<li class="toctree-l1"><a class="reference internal" href="modify_subroutines.html">Modifying Subroutines:</a></li>
-<li class="toctree-l1"><a class="reference internal" href="technicial_tips.html">Technical Tips</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../project_notes.html">Project Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modify_subroutines.html">Modifying Subroutines:</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../technicial_tips.html">Technical Tips</a></li>
 </ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="notebooks/index.html">Notebooks</a></li>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Notebooks</a></li>
 </ul>
 
             
@@ -107,7 +108,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">Kamodo-GEODYN Documentation</a>
+          <a href="../index.html">Kamodo-GEODYN Documentation</a>
         
       </nav>
 
@@ -138,15 +139,15 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>GEODYN Output</li>
+      <li>Notebooks</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
           
-            <a href="_sources/geodyn_output.md.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/notebooks/index.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -183,91 +184,18 @@
     text-align: unset;
 }
 </style>
-<div class="section" id="geodyn-output">
-<h1>GEODYN Output<a class="headerlink" href="#geodyn-output" title="Permalink to this headline">¶</a></h1>
-<p>The GEODYN ouput is spread out across many files and which files needs to be used depends on what one is looking for.  Below is a breakdown of the ouput, its format, and what can be found in each file.  This is not an exhaustive list, and represents the files that are pertinent to this project (using geodyn for model validation).<br />8</p>
-<table border="1" class="docutils">
-<thead>
-<tr>
-<th>File Name</th>
-<th>File type (readability)</th>
-<th>Contents</th>
-<th>GEODYN Designation</th>
-<th>documentation loc</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>iieout</td>
-<td>ascii</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>ascii_xyz</td>
-<td>ascii</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>ascii_kep</td>
-<td>ascii</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>resid</td>
-<td>binary</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>orbfil</td>
-<td>binary</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>orbfil2</td>
-<td>binary</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>densityfil</td>
-<td>ascii</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>fort.9</td>
-<td>ascii</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>punch</td>
-<td>binary</td>
-<td>???</td>
-<td>???</td>
-<td>TODO</td>
-</tr>
-</tbody>
-</table></div>
+<div class="section" id="notebooks">
+<h1>Notebooks<a class="headerlink" href="#notebooks" title="Permalink to this headline">¶</a></h1>
+</div>
 
 
            </div>
            
           </div>
           <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="../technicial_tips.html" class="btn btn-neutral float-left" title="Technical Tips" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
 
   <hr/>
 
