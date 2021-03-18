@@ -17,11 +17,14 @@ Contents:
    modify_subroutines.md
    technicial_tips.md
 
-Notebooks
-========
-.. toctree:: Notebooks
-    :maxdepth: 2
    notebooks/index
+
+
+#Notebooks
+#=========
+#.. toctree::
+#    :maxdepth: 2
+#   notebooks/index
 
 
 

@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Demonstration: Running Geodyn &mdash; Kamodo-GEODYN Documentation tbd documentation</title>
+  <title>Demonstration: Running GEODYN &mdash; Kamodo-GEODYN Documentation tbd documentation</title>
   
 
   
@@ -31,17 +31,13 @@
         <script src="../_static/doctools.js"></script>
         <script src="../_static/language_data.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-        <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"equationNumbers": {"autoNumber": "AMS", "useLabelIds": true}}, "tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
     
     <link rel="author" title="About these documents" href="../about.html" />
     <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Demonstration: Setup File" href="Demo__geodyn_setup_file.html" />
-    <link rel="prev" title="Notebooks" href="index.html" /> 
+    <link rel="search" title="Search" href="../search.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -91,29 +87,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../project_notes.html">Project Notes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../modify_subroutines.html">Modifying Subroutines:</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../technicial_tips.html">Technical Tips</a></li>
-</ul>
-<ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="index.html">Notebooks</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Demonstration: Running Geodyn</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#Locations-of-requisite-files-and-scripts">Locations of requisite files and scripts</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#GEODYN-IIS-and-IIE-executables:">GEODYN IIS and IIE executables:</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#Setup-Files-(Unit-5)-to-read-into-GEODYN:">Setup Files (Unit 5) to read into GEODYN:</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#Script-that-runs-GEODYN:">Script that runs GEODYN:</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#GEODYN-Output:">GEODYN Output:</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#Running-GEODYN:">Running GEODYN:</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#Inside-the-GEODYN-script:">Inside the GEODYN script:</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="Demo__geodyn_setup_file.html">Demonstration: Setup File</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Demo__geodyn_output_explained.html">Demonstration: Reading Data</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Demo__compare_den_models.html">Demonstration: Compare Density Models</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Demo__compare_msis_models.html">Demonstration for Comparing the MSIS model versions in GEODYN</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="index.html">Notebooks</a></li>
 </ul>
 
             
@@ -160,9 +134,7 @@
     
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
-          <li><a href="index.html">Notebooks</a> &raquo;</li>
-        
-      <li>Demonstration: Running Geodyn</li>
+      <li>Demonstration: Running GEODYN</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -436,8 +408,8 @@ div.rendered_html tbody tr:hover {
     text-align: unset;
 }
 </style>
-<div class="section" id="Demonstration:-Running-Geodyn">
-<h1>Demonstration: Running Geodyn<a class="headerlink" href="#Demonstration:-Running-Geodyn" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="Demonstration:-Running-GEODYN">
+<h1>Demonstration: Running GEODYN<a class="headerlink" href="#Demonstration:-Running-GEODYN" title="Permalink to this headline">¶</a></h1>
 <p><strong>Details:</strong> This notebook demonstrates how to run GEODYN from the command line.</p>
 <div class="section" id="Locations-of-requisite-files-and-scripts">
 <h2>Locations of requisite files and scripts<a class="headerlink" href="#Locations-of-requisite-files-and-scripts" title="Permalink to this headline">¶</a></h2>
@@ -449,7 +421,7 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">ll</span> <span class="o">/</span><span class="n">data</span><span class="o">/</span><span class="n">geodyn_code</span><span class="o">/</span>
+<span></span><span class="n">ll</span> <span class="o">/</span><span class="n">data</span><span class="o">/</span><span class="n">geodyn_proj</span><span class="o">/</span><span class="n">geodyn_code</span><span class="o">/</span>
 </pre></div>
 </div>
 </div>
@@ -460,7 +432,7 @@ div.rendered_html tbody tr:hover {
 <div class="highlight"><pre>
 total 4
 lrwxrwxrwx. 1 m_geodyn    7 Sep 16 20:03 <span class="ansi-red-intense-fg" style="background-color: rgb(8,8,8)">GEODYN</span> -&gt; <span class="ansi-white-intense-fg ansi-bold" style="background-color: rgb(8,8,8)">/geodyn</span>
-drwxrwxr-x. 8 m_geodyn  115 Feb 19 16:52 <span style="color: rgb(0,95,255)">IIE</span>/
+drwxrwxr-x. 8 m_geodyn  115 Feb 25 18:55 <span style="color: rgb(0,95,255)">IIE</span>/
 drwxrwxr-x. 4 m_geodyn   53 Feb  4 22:08 <span style="color: rgb(0,95,255)">IIS</span>/
 drwxrwxr-x. 2 m_geodyn  182 Feb  2 20:37 <span style="color: rgb(0,95,255)">modified_subroutines</span>/
 drwxrwxr-x. 3 m_geodyn 4096 Dec 15 18:30 <span style="color: rgb(0,95,255)">RUNS</span>/
@@ -474,11 +446,11 @@ drwxrwxr-x. 3 m_geodyn 4096 Dec 15 18:30 <span style="color: rgb(0,95,255)">RUNS
 <li><p>Each density model has its own <code class="docutils literal notranslate"><span class="pre">ATMDEN</span></code> card input</p></li>
 </ul>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">ll</span> <span class="o">/</span><span class="n">data</span><span class="o">/</span><span class="n">runs_geodyn</span><span class="o">/</span><span class="n">st</span><span class="o">/</span><span class="n">setups</span><span class="o">/</span>
+<span></span><span class="n">ll</span> <span class="o">/</span><span class="n">data</span><span class="o">/</span><span class="n">geodyn_proj</span><span class="o">/</span><span class="n">runs_geodyn</span><span class="o">/</span><span class="n">st</span><span class="o">/</span><span class="n">setups</span><span class="o">/</span>
 </pre></div>
 </div>
 </div>
@@ -494,8 +466,8 @@ drwxrwxr-x. 2 m_geodyn    198 Jan 18 23:07 <span style="color: rgb(0,95,255)">dt
 -rw-rw-r--. 1 m_geodyn   2703 Jan 22 18:41 edit_script_singlearc_singleden
 drwxrwxr-x. 2 m_geodyn    198 Feb 23 00:37 <span style="color: rgb(0,95,255)">jaachia71_acceloff</span>/
 drwxrwxr-x. 2 m_geodyn    198 Jan 18 23:07 <span style="color: rgb(0,95,255)">jaachia71_accelon</span>/
-drwxrwxr-x. 2 m_geodyn    198 Feb 23 00:35 <span style="color: rgb(0,95,255)">msis_acceloff</span>/
-drwxrwxr-x. 2 m_geodyn    198 Feb 16 19:07 <span style="color: rgb(0,95,255)">msis_accelon</span>/
+drwxrwxr-x. 2 m_geodyn    226 Feb 24 01:00 <span style="color: rgb(0,95,255)">msis_acceloff</span>/
+drwxrwxr-x. 2 m_geodyn    198 Feb 24 01:01 <span style="color: rgb(0,95,255)">msis_accelon</span>/
 -rw-r--r--. 1 m_geodyn 470265 Jan  5 16:58 <span class="ansi-red-intense-fg">st030914_2wk.bz2</span>
 -rw-r--r--. 1 m_geodyn 469716 Dec 15 22:15 <span class="ansi-red-intense-fg">st030928_2wk.bz2</span>
 -rw-r--r--. 1 m_geodyn 469782 Dec 15 22:15 <span class="ansi-red-intense-fg">st031012_2wk.bz2</span>
@@ -507,11 +479,11 @@ drwxrwxr-x. 2 m_geodyn    198 Feb 16 19:07 <span style="color: rgb(0,95,255)">ms
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">ll</span> <span class="o">/</span><span class="n">data</span><span class="o">/</span><span class="n">runs_geodyn</span><span class="o">/</span><span class="n">st</span><span class="o">/</span><span class="n">setups</span><span class="o">/</span><span class="n">msis_accelon</span><span class="o">/</span>
+<span></span><span class="n">ll</span> <span class="o">/</span><span class="n">data</span><span class="o">/</span><span class="n">geodyn_proj</span><span class="o">/</span><span class="n">runs_geodyn</span><span class="o">/</span><span class="n">st</span><span class="o">/</span><span class="n">setups</span><span class="o">/</span><span class="n">msis_accelon</span><span class="o">/</span>
 </pre></div>
 </div>
 </div>
@@ -540,7 +512,7 @@ total 3680
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">ll</span> <span class="o">/</span><span class="n">data</span><span class="o">/</span><span class="n">runs_geodyn</span><span class="o">/</span><span class="n">st</span><span class="o">/</span><span class="n">scripts</span>
+<span></span><span class="n">ll</span> <span class="o">/</span><span class="n">data</span><span class="o">/</span><span class="n">geodyn_proj</span><span class="o">/</span><span class="n">runs_geodyn</span><span class="o">/</span><span class="n">st</span><span class="o">/</span><span class="n">scripts</span>
 </pre></div>
 </div>
 </div>
@@ -549,11 +521,11 @@ total 3680
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-total 48
--rw-r--r--. 1 m_geodyn 10227 Feb 24 00:20 geodyn_st
+total 52
+-rw-r--r--. 1 m_geodyn 10493 Mar  4 19:08 geodyn_st
 -rw-r--r--. 1 m_geodyn 10301 Feb  8 23:40 msis2_geodyn_st
 -rw-r--r--. 1 m_geodyn  7225 Dec 15 22:18 orig_geodyn_zach
--rw-rw-r--. 1 m_geodyn  8708 Feb 24 00:20 output_text.txt
+-rw-rw-r--. 1 m_geodyn 15944 Mar  4 23:53 output_text.txt
 -rw-rw-r--. 1 m_geodyn  2459 Feb 23 00:28 run_all_dens
 </pre></div></div>
 </div>
@@ -568,7 +540,7 @@ total 48
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">ll</span> <span class="o">/</span><span class="n">data</span><span class="o">/</span><span class="n">runs_geodyn</span><span class="o">/</span><span class="n">st</span><span class="o">/</span><span class="n">results</span><span class="o">/</span>
+<span></span><span class="n">ll</span> <span class="o">/</span><span class="n">data</span><span class="o">/</span><span class="n">geodyn_proj</span><span class="o">/</span><span class="n">runs_geodyn</span><span class="o">/</span><span class="n">st</span><span class="o">/</span><span class="n">results</span><span class="o">/</span>
 </pre></div>
 </div>
 </div>
@@ -577,22 +549,7 @@ total 48
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-total 0
-drwxrwxr-x.  4 m_geodyn  49 Feb 22 23:38 <span style="color: rgb(0,95,255)">dtm87</span>/
-drwxrwxr-x. 13 m_geodyn 159 Jan  5 16:42 <span style="color: rgb(0,95,255)">goco05s</span>/
-drwxrwxr-x. 14 m_geodyn 179 Jan 12 19:36 <span style="color: rgb(0,95,255)">goco05s_dtm87</span>/
-drwxrwxr-x. 14 m_geodyn 179 Jan 29 23:20 <span style="color: rgb(0,95,255)">goco05s_dtm87_accelon</span>/
-drwxrwxr-x. 14 m_geodyn 179 Jan 12 20:38 <span style="color: rgb(0,95,255)">goco05s_jaachia71</span>/
-drwxrwxr-x. 14 m_geodyn 179 Jan 29 23:56 <span style="color: rgb(0,95,255)">goco05s_jaachia71_accelon</span>/
-drwxrwxr-x. 14 m_geodyn 179 Feb 12 17:09 <span style="color: rgb(0,95,255)">goco05s_msis00_accelon</span>/
-drwxrwxr-x. 14 m_geodyn 179 Feb 10 21:44 <span style="color: rgb(0,95,255)">goco05s_msis2_accelon</span>/
-drwxrwxr-x. 15 m_geodyn 192 Jan 22 18:35 <span style="color: rgb(0,95,255)">goco05s_msis86</span>/
-drwxrwxr-x. 14 m_geodyn 179 Jan 26 19:23 <span style="color: rgb(0,95,255)">goco05s_msis86_acceloff</span>/
-drwxrwxr-x. 14 m_geodyn 179 Jan 25 19:01 <span style="color: rgb(0,95,255)">goco05s_msis86_accelon</span>/
-drwxrwxr-x.  4 m_geodyn  57 Feb 22 23:38 <span style="color: rgb(0,95,255)">jaachia71</span>/
-drwxrwxr-x.  4 m_geodyn  51 Feb 22 23:38 <span style="color: rgb(0,95,255)">msis00</span>/
-drwxrwxr-x.  4 m_geodyn  49 Feb 22 23:26 <span style="color: rgb(0,95,255)">msis2</span>/
-drwxrwxr-x.  4 m_geodyn  51 Feb 22 23:38 <span style="color: rgb(0,95,255)">msis86</span>/
+ls: cannot access /data/geodyn_proj/runs_geodyn/st/results/: No such file or directory
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
@@ -600,7 +557,7 @@ drwxrwxr-x.  4 m_geodyn  51 Feb 22 23:38 <span style="color: rgb(0,95,255)">msis
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">ll</span> <span class="o">/</span><span class="n">data</span><span class="o">/</span><span class="n">runs_geodyn</span><span class="o">/</span><span class="n">st</span><span class="o">/</span><span class="n">results</span><span class="o">/</span><span class="n">msis2</span><span class="o">/</span>
+<span></span><span class="n">ll</span> <span class="o">/</span><span class="n">data</span><span class="o">/</span><span class="n">geodyn_proj</span><span class="o">/</span><span class="n">runs_geodyn</span><span class="o">/</span><span class="n">st</span><span class="o">/</span><span class="n">results</span><span class="o">/</span><span class="n">msis2</span><span class="o">/</span>
 </pre></div>
 </div>
 </div>
@@ -609,9 +566,7 @@ drwxrwxr-x.  4 m_geodyn  51 Feb 22 23:38 <span style="color: rgb(0,95,255)">msis
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-total 0
-drwxrwxr-x. 14 m_geodyn 179 Feb 22 23:26 <span style="color: rgb(0,95,255)">msis2_acceloff</span>/
-drwxrwxr-x. 14 m_geodyn 179 Feb 16 19:01 <span style="color: rgb(0,95,255)">msis2_accelon</span>/
+ls: cannot access /data/geodyn_proj/runs_geodyn/st/results/msis2/: No such file or directory
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
@@ -619,7 +574,7 @@ drwxrwxr-x. 14 m_geodyn 179 Feb 16 19:01 <span style="color: rgb(0,95,255)">msis
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">ll</span> <span class="o">/</span><span class="n">data</span><span class="o">/</span><span class="n">runs_geodyn</span><span class="o">/</span><span class="n">st</span><span class="o">/</span><span class="n">results</span><span class="o">/</span><span class="n">msis2</span><span class="o">/</span><span class="n">msis2_accelon</span><span class="o">/</span>
+<span></span><span class="n">ll</span> <span class="o">/</span><span class="n">data</span><span class="o">/</span><span class="n">geodyn_proj</span><span class="o">/</span><span class="n">runs_geodyn</span><span class="o">/</span><span class="n">st</span><span class="o">/</span><span class="n">results</span><span class="o">/</span><span class="n">msis2</span><span class="o">/</span><span class="n">msis2_accelon</span><span class="o">/</span>
 </pre></div>
 </div>
 </div>
@@ -628,19 +583,7 @@ drwxrwxr-x. 14 m_geodyn 179 Feb 16 19:01 <span style="color: rgb(0,95,255)">msis
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-total 0
-drwxrwxr-x. 2 m_geodyn  6 Feb 16 19:01 <span style="color: rgb(0,95,255)">all_outputs</span>/
-drwxrwxr-x. 2 m_geodyn 34 Feb 23 01:34 <span style="color: rgb(0,95,255)">DENSITY</span>/
-drwxrwxr-x. 3 m_geodyn 19 Feb 16 19:01 <span style="color: rgb(0,95,255)">EMAT</span>/
-drwxrwxr-x. 2 m_geodyn 34 Feb 23 01:34 <span style="color: rgb(0,95,255)">IIEOUT</span>/
-drwxrwxr-x. 2 m_geodyn 34 Feb 23 01:34 <span style="color: rgb(0,95,255)">IISSET</span>/
-drwxrwxr-x. 2 m_geodyn 34 Feb 23 01:34 <span style="color: rgb(0,95,255)">KEP_TRAJ</span>/
-drwxrwxr-x. 2 m_geodyn 39 Feb 16 19:25 <span style="color: rgb(0,95,255)">orbits</span>/
-drwxrwxr-x. 2 m_geodyn 38 Feb 16 19:02 <span style="color: rgb(0,95,255)">PUNCH</span>/
-drwxrwxr-x. 2 m_geodyn 34 Feb 23 01:34 <span style="color: rgb(0,95,255)">RESIDS</span>/
-drwxrwxr-x. 2 m_geodyn 34 Feb 23 01:34 <span style="color: rgb(0,95,255)">sumry</span>/
-drwxrwxr-x. 2 m_geodyn 34 Feb 23 01:34 <span style="color: rgb(0,95,255)">TELEM</span>/
-drwxrwxr-x. 2 m_geodyn 34 Feb 23 01:34 <span style="color: rgb(0,95,255)">XYZ_TRAJ</span>/
+ls: cannot access /data/geodyn_proj/runs_geodyn/st/results/msis2/msis2_accelon/: No such file or directory
 </pre></div></div>
 </div>
 <p>The files are named according to their satellite, arc time, and gravity series. <code class="docutils literal notranslate"><span class="pre">SAT</span></code> <code class="docutils literal notranslate"><span class="pre">ARC_TIME</span></code>.<code class="docutils literal notranslate"><span class="pre">GRAV_SERIES</span></code></p>
@@ -649,7 +592,7 @@ drwxrwxr-x. 2 m_geodyn 34 Feb 23 01:34 <span style="color: rgb(0,95,255)">XYZ_TR
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">ll</span> <span class="o">/</span><span class="n">data</span><span class="o">/</span><span class="n">runs_geodyn</span><span class="o">/</span><span class="n">st</span><span class="o">/</span><span class="n">results</span><span class="o">/</span><span class="n">msis2</span><span class="o">/</span><span class="n">msis2_accelon</span><span class="o">/</span><span class="n">IIEOUT</span><span class="o">/</span>
+<span></span><span class="n">ll</span> <span class="o">/</span><span class="n">data</span><span class="o">/</span><span class="n">geodyn_proj</span><span class="o">/</span><span class="n">runs_geodyn</span><span class="o">/</span><span class="n">st</span><span class="o">/</span><span class="n">results</span><span class="o">/</span><span class="n">msis2</span><span class="o">/</span><span class="n">msis2_accelon</span><span class="o">/</span><span class="n">IIEOUT</span><span class="o">/</span>
 </pre></div>
 </div>
 </div>
@@ -658,8 +601,7 @@ drwxrwxr-x. 2 m_geodyn 34 Feb 23 01:34 <span style="color: rgb(0,95,255)">XYZ_TR
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-total 106224
--rw-rw-r--. 1 m_geodyn 108772092 Feb 23 01:34 st030914_2wk.goco05s
+ls: cannot access /data/geodyn_proj/runs_geodyn/st/results/msis2/msis2_accelon/IIEOUT/: No such file or directory
 </pre></div></div>
 </div>
 </div>
@@ -676,7 +618,7 @@ total 106224
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">script_path</span> <span class="o">=</span> <span class="s1">&#39;/data/runs_geodyn/st/scripts/geodyn_st&#39;</span>
+<span></span><span class="n">script_path</span> <span class="o">=</span> <span class="s1">&#39;/data/geodyn_proj/runs_geodyn/st/scripts/geodyn_st&#39;</span>
 
 <span class="n">text_file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">script_path</span><span class="p">)</span>
 <span class="n">file_content</span> <span class="o">=</span> <span class="n">text_file</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
@@ -697,11 +639,10 @@ SATELLITE=st
 MATPRE=40
 
 ### CHOOSE DENSITY MODEL:
-#DEN_DIR=msis00
 
 DEN_DIR=msis00
 IN_DEN_DIR=msis
-
+GDYN_version=&#39;_msis00_f90&#39;
 ACCELS=acceloff
 ARC=${1:-st030914_2wk}
 
@@ -724,13 +665,13 @@ DIRGRAV=/data/runs_geodyn/st/gravity
 DELDIR=/data/runs_geodyn/extra_dirs/deletes/$SATELLITE
 G2BDIR=/data/runs_geodyn/$SATELLITE/g2b
 ATGRAVDIR=/data/runs_geodyn/$SATELLITE/atgrav
-OUTPUTDIR=/data/runs_geodyn/$SATELLITE/results/${DEN_DIR}/${SERIES}
-mkdir /data/runs_geodyn/$SATELLITE/results/${DEN_DIR}
-/data/runs_geodyn/$SATELLITE/results/${DEN_DIR}/${SERIES}
+OUTPUTDIR=/data/runs_geodyn/results/$SATELLITE/${DEN_DIR}/${SERIES}
+mkdir /data/runs_geodyn/results/$SATELLITE/${DEN_DIR}
+/data/runs_geodyn/results/$SATELLITE/${DEN_DIR}/${SERIES}
 mkdir $OUTPUTDIR
 BINDIR=/data/runs_geodyn/extra_dirs/bin
-mkdir /data/runs_geodyn/$SATELLITE/
-mkdir /data/runs_geodyn/$SATELLITE/results
+mkdir /data/runs_geodyn/results
+mkdir /data/runs_geodyn/results/$SATELLITE
 mkdir $OUTPUTDIR
 
 ### INPUT FILES
@@ -962,6 +903,9 @@ mv fort.10 ascii_kep
 mv fort.30 orbfil
 mv fort.31 orbfil2
 mv fort.99 densityfil
+mv fort.98 msis_in_file
+mv fort.101 msis_out_file
+mv fort.103 msis_SWI_file
 rm -f slvtmp* ftn* fort.*
 $EMATUDIR/ematu &lt;&lt;EOF 2&gt;err &gt;output
 emat
@@ -1028,6 +972,9 @@ cp orbfil2 $OUTPUTDIR/orbits/${ARC}.${GRAVITY}_orb2
 mv telem   $OUTPUTDIR/TELEM/${ARC}.${GRAVITY}
 
 cp densityfil $OUTPUTDIR/DENSITY/${ARC}.${GRAVITY}
+cp msis_in_file $OUTPUTDIR/DENSITY/${ARC}.${GRAVITY}_msisin
+cp msis_out_file $OUTPUTDIR/DENSITY/${ARC}.${GRAVITY}_msisout
+cp msis_SWI_file $OUTPUTDIR/DENSITY/${ARC}.${GRAVITY}_msisSWI
 #cp xyzout $OUTPUTDIR/all_outputs/${ARC}.${GRAVITY}
 #cp aeiout $OUTPUTDIR/all_outputs/${ARC}.${GRAVITY}
 cp ascii_xyz $OUTPUTDIR/XYZ_TRAJ/${ARC}.${GRAVITY}
@@ -1057,15 +1004,6 @@ echo &#34; #***************End of Script&#34;
            
           </div>
           <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="Demo__geodyn_setup_file.html" class="btn btn-neutral float-right" title="Demonstration: Setup File" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="index.html" class="btn btn-neutral float-left" title="Notebooks" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
-    </div>
   
 
   <hr/>
