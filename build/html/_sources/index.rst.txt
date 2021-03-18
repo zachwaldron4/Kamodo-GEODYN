@@ -6,6 +6,8 @@
 Welcome to the GEODYN-Kamodo Project documentation!
 ====================================================
 
+Contents:
+
 .. toctree::
    :maxdepth: 2
    :includehidden:
@@ -14,11 +16,13 @@ Welcome to the GEODYN-Kamodo Project documentation!
    project_notes.md
    modify_subroutines.md
    technicial_tips.md
-   notebooks/Demo__Run_Geodyn
-   notebooks/Demo__geodyn_setup_file
-   notebooks/Demo__geodyn_output_explained
-   notebooks/Demo__compare_den_models
-   notebooks/Demo__compare_msis_models
+
+Notebooks
+========
+.. toctree:: Notebooks
+    :maxdepth: 2
+   notebooks/index
+
 
 
 
