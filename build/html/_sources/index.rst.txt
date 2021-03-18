@@ -5,7 +5,7 @@ Welcome to the GEODYN-Kamodo Project documentation!
 Contents:
 
 .. toctree::
-   :maxdepth: 5
+   :maxdepth: 6
    :includehidden:
 
    about_proj/index
