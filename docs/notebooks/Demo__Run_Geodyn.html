@@ -35,9 +35,9 @@
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
     
-    <link rel="author" title="About these documents" href="../about.html" />
     <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" /> 
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Notebook" href="index.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -82,12 +82,61 @@
               
             
             
-              <ul>
-<li class="toctree-l1"><a class="reference internal" href="../about.html">Project Overview</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../project_notes.html">Project Notes</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../modify_subroutines.html">Modifying Subroutines:</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../technicial_tips.html">Technical Tips</a></li>
-<li class="toctree-l1"><a class="reference internal" href="index.html">Notebooks</a></li>
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../about_proj/index.html">About</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../about_proj/about.html">Project Overview</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../about_proj/about.html#about-the-project">About the Project</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../about_proj/about.html#kamodo">Kamodo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../about_proj/about.html#geodyn">GEODYN</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../about_proj/about.html#goals">Goals</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../about_proj/project_notes.html">Project Notes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../about_proj/project_notes.html#density-models-in-geodyn">Density Models in GEODYN</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/index.html">Getting Started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../getting_started/technical_tips.html">Technical Tips</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../getting_started/technical_tips.html#navigating-aws">Navigating AWS</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../getting_started/technical_tips.html#copying-files-from-the-inner-server">Copying files from the inner server.</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../getting_started/technical_tips.html#installing-miniconda3">Installing miniconda3</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../getting_started/technical_tips.html#port-forwarding-jupyter-from-to-a-local-machine-through-tunneled-ssh">Port Forwarding Jupyter from to a local machine through tunneled ssh:</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../getting_started/technical_tips.html#install-kamodo">Install Kamodo:</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../getting_started/technical_tips.html#miscellaneous-tips">Miscellaneous Tips</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../getting_started/technical_tips.html#using-git">Using Git</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../geodyn_details/index.html">GEODYN Details</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../geodyn_details/modify_subroutines.html">Modifying Subroutines:</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../geodyn_details/modify_subroutines.html#including-density-output">Including Density Output:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../geodyn_details/modify_subroutines.html#other-modifications">Other Modifications:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Notebook</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Demonstration: Running GEODYN</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#Locations-of-requisite-files-and-scripts">Locations of requisite files and scripts</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#GEODYN-IIS-and-IIE-executables:">GEODYN IIS and IIE executables:</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Setup-Files-(Unit-5)-to-read-into-GEODYN:">Setup Files (Unit 5) to read into GEODYN:</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Script-that-runs-GEODYN:">Script that runs GEODYN:</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#GEODYN-Output:">GEODYN Output:</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#Running-GEODYN:">Running GEODYN:</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#Inside-the-GEODYN-script:">Inside the GEODYN script:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 
             
@@ -133,6 +182,8 @@
   <ul class="wy-breadcrumbs">
     
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="index.html">Notebook</a> &raquo;</li>
         
       <li>Demonstration: Running GEODYN</li>
     
@@ -1004,6 +1055,13 @@ echo &#34; #***************End of Script&#34;
            
           </div>
           <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="Notebook" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
   
 
   <hr/>

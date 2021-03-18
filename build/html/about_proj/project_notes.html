@@ -1,0 +1,310 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Project Notes &mdash; Kamodo-GEODYN Documentation tbd documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Getting Started" href="../getting_started/index.html" />
+    <link rel="prev" title="Project Overview" href="about.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> Kamodo-GEODYN Documentation
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">About</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="about.html">Project Overview</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="about.html#about-the-project">About the Project</a></li>
+<li class="toctree-l3"><a class="reference internal" href="about.html#kamodo">Kamodo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="about.html#geodyn">GEODYN</a></li>
+<li class="toctree-l3"><a class="reference internal" href="about.html#goals">Goals</a></li>
+</ul>
+</li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Project Notes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#density-models-in-geodyn">Density Models in GEODYN</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/index.html">Getting Started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../getting_started/technical_tips.html">Technical Tips</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../getting_started/technical_tips.html#navigating-aws">Navigating AWS</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../getting_started/technical_tips.html#copying-files-from-the-inner-server">Copying files from the inner server.</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../getting_started/technical_tips.html#installing-miniconda3">Installing miniconda3</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../getting_started/technical_tips.html#port-forwarding-jupyter-from-to-a-local-machine-through-tunneled-ssh">Port Forwarding Jupyter from to a local machine through tunneled ssh:</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../getting_started/technical_tips.html#install-kamodo">Install Kamodo:</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../getting_started/technical_tips.html#miscellaneous-tips">Miscellaneous Tips</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../getting_started/technical_tips.html#using-git">Using Git</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../geodyn_details/index.html">GEODYN Details</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../geodyn_details/modify_subroutines.html">Modifying Subroutines:</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../geodyn_details/modify_subroutines.html#including-density-output">Including Density Output:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../geodyn_details/modify_subroutines.html#other-modifications">Other Modifications:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../notebooks/index.html">Notebook</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/Demo__Run_Geodyn.html">Demonstration: Running GEODYN</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../notebooks/Demo__Run_Geodyn.html#Locations-of-requisite-files-and-scripts">Locations of requisite files and scripts</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../notebooks/Demo__Run_Geodyn.html#GEODYN-IIS-and-IIE-executables:">GEODYN IIS and IIE executables:</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../notebooks/Demo__Run_Geodyn.html#Setup-Files-(Unit-5)-to-read-into-GEODYN:">Setup Files (Unit 5) to read into GEODYN:</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../notebooks/Demo__Run_Geodyn.html#Script-that-runs-GEODYN:">Script that runs GEODYN:</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../notebooks/Demo__Run_Geodyn.html#GEODYN-Output:">GEODYN Output:</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../notebooks/Demo__Run_Geodyn.html#Running-GEODYN:">Running GEODYN:</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../notebooks/Demo__Run_Geodyn.html#Inside-the-GEODYN-script:">Inside the GEODYN script:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Kamodo-GEODYN Documentation</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="index.html">About</a> &raquo;</li>
+        
+      <li>Project Notes</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/about_proj/project_notes.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="project-notes">
+<h1>Project Notes<a class="headerlink" href="#project-notes" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="density-models-in-geodyn">
+<h2>Density Models in GEODYN<a class="headerlink" href="#density-models-in-geodyn" title="Permalink to this headline">¶</a></h2>
+<p>As of December 2020, the current default thermospheric implementation in GEODYN is the Jacchia 1971 model, with options existing to use the Thermosphere Drag Model (DTM87), or the MSIS-86 Empirical Drag Model (MSIS86). These outdated models represent a source of error in the calculation of satellite drag during an orbit determination run.  The deficiency of the density model will be compensated by overfitting to other estimated parameters, such as drag coefficient, estimated accelerations, state vector, etc. This overfitting can lead to problems if one needs to maintain realistic values for the estimated parameters in order to predict a future orbit.</p>
+<p><strong>On Overfitting: [Sutton 2020, Private Communication]</strong><br />When using orbital determination (OD) and estimating lots of parameters, residuals may not always show an obvious improvement even when a much better density model is used. In such a case, the deficiency of the original model is compensated by other estimated parameters, maybe CD, maybe other terms. This overfitting can lead to problems if you care about more than just the residuals, i.e., if you need to maintain a realistic CD in order to predict a future orbit. For instance, if you estimate CD = 100 with a horrible thermosphere model, that value may not persist so well into the future.</p>
+<p><strong>Items to track when changing density models:</strong></p>
+<ul class="simple">
+<li><p>Density at the satellite orbit</p></li>
+<li><p>Residuals</p></li>
+<li><p>Trajectory (ephemeris) of the satellite</p></li>
+<li><p>Cd</p></li>
+<li><p>Other parameters that might are being estimated.</p>
+<ul>
+<li><p>What are the parameters that could be “soaking up” the thermosphere errors. To assess the thermosphere model, you’d want to keep these as few as possible to avoid overfitting.</p></li>
+<li><p>i.e. if you’re also estimating a solar radiation pressure coefficient, you’d want to know how it varies over time.</p></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../getting_started/index.html" class="btn btn-neutral float-right" title="Getting Started" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="about.html" class="btn btn-neutral float-left" title="Project Overview" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2021, Zach Waldron
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
