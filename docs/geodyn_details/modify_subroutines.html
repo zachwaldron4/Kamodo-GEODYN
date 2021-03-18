@@ -31,13 +31,15 @@
         <script src="../_static/doctools.js"></script>
         <script src="../_static/language_data.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"equationNumbers": {"autoNumber": "AMS", "useLabelIds": true}}, "tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
     
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Notebook" href="../notebooks/index.html" />
+    <link rel="next" title="Notebooks" href="../notebooks/index.html" />
     <link rel="prev" title="GEODYN Details" href="index.html" /> 
 </head>
 
@@ -92,23 +94,28 @@
 <li class="toctree-l3"><a class="reference internal" href="../about_proj/about.html#goals">Goals</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../about_proj/project_notes.html">Project Notes</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../about_proj/project_notes.html#density-models-in-geodyn">Density Models in GEODYN</a></li>
-</ul>
-</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../getting_started/index.html">Getting Started</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../getting_started/technical_tips.html">Technical Tips</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../getting_started/technical_tips.html#navigating-aws">Navigating AWS</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../getting_started/technical_tips.html#copying-files-from-the-inner-server">Copying files from the inner server.</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../getting_started/technical_tips.html#installing-miniconda3">Installing miniconda3</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../getting_started/technical_tips.html#port-forwarding-jupyter-from-to-a-local-machine-through-tunneled-ssh">Port Forwarding Jupyter from to a local machine through tunneled ssh:</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../getting_started/technical_tips.html#install-kamodo">Install Kamodo:</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../getting_started/technical_tips.html#miscellaneous-tips">Miscellaneous Tips</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../getting_started/getting_started_1.html">Accessing AWS</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../getting_started/getting_started_1.html#access-the-aws-server">Access the AWS Server</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../getting_started/getting_started_1.html#activating-a-jupyter-environment-set-port-forwarding">Activating a Jupyter environment (set port forwarding):</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../getting_started/technical_tips.html#using-git">Using Git</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../getting_started/getting_started_2.html">Navigating AWS</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../getting_started/getting_started_2.html#directory-structure-of-the-geodyn-project">Directory Structure of the GEODYN Project</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../getting_started/getting_started_2.html#directories-and-files-of-importance">Directories and Files of Importance</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../getting_started/getting_started_2.html#geodyn-output-readers">GEODYN output readers:</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../getting_started/getting_started_2.html#msis-evaluation-notebooks">MSIS Evaluation Notebooks:</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../getting_started/getting_started_2.html#geodyn-source-code">GEODYN Source Code:</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../getting_started/getting_started_2.html#geodyn-starlette-runs">GEODYN Starlette Runs:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../getting_started/installs_and_techtips.html">Installations and Technical Tips</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../getting_started/installs_and_techtips.html#installing-miniconda3">Installing miniconda3 :</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../getting_started/installs_and_techtips.html#installing-kamodo">Installing Kamodo:</a></li>
 </ul>
 </li>
 </ul>
@@ -121,7 +128,7 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../notebooks/index.html">Notebook</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="../notebooks/index.html">Notebooks</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../notebooks/Demo__Run_Geodyn.html">Demonstration: Running GEODYN</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../notebooks/Demo__Run_Geodyn.html#Locations-of-requisite-files-and-scripts">Locations of requisite files and scripts</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../notebooks/Demo__Run_Geodyn.html#GEODYN-IIS-and-IIE-executables:">GEODYN IIS and IIE executables:</a></li>
@@ -132,6 +139,83 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../notebooks/Demo__Run_Geodyn.html#Running-GEODYN:">Running GEODYN:</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../notebooks/Demo__Run_Geodyn.html#Inside-the-GEODYN-script:">Inside the GEODYN script:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/Demo__geodyn_setup_file.html">Demonstration: Setup File</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../notebooks/Demo__geodyn_setup_file.html#Location">Location</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../notebooks/Demo__geodyn_setup_file.html#Card-Options">Card Options</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../notebooks/Demo__geodyn_setup_file.html#DRAG">DRAG</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../notebooks/Demo__geodyn_setup_file.html#OBSVU">OBSVU</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../notebooks/Demo__geodyn_setup_file.html#RESIDU">RESIDU</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../notebooks/Demo__geodyn_setup_file.html#ORBFIL">ORBFIL</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../notebooks/Demo__geodyn_setup_file.html#ORBTVU">ORBTVU</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../notebooks/Demo__geodyn_setup_file.html#ATMDEN">ATMDEN</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../notebooks/Demo__geodyn_setup_file.html#ACCEL9">ACCEL9</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/Demo__geodyn_output_explained.html">Demonstration: Reading Data</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../notebooks/Demo__geodyn_output_explained.html#Adjusted-Parameters">Adjusted Parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../notebooks/Demo__geodyn_output_explained.html#Trajectory-Data">Trajectory Data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../notebooks/Demo__geodyn_output_explained.html#Density-Data">Density Data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../notebooks/Demo__geodyn_output_explained.html#Residual-Data">Residual Data</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/Demo__compare_den_models.html">Demonstration: Compare Density Models</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../notebooks/Demo__compare_den_models.html#Drag-Coefficient-Comparison">Drag Coefficient Comparison</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../notebooks/Demo__compare_den_models.html#The-drag-coefficient-is-time-dependent">The drag coefficient is time dependent</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../notebooks/Demo__compare_den_models.html#Compare-density-along-the-orbit">Compare density along the orbit</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../notebooks/Demo__compare_den_models.html#Compare-residuals">Compare residuals</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../notebooks/Demo__compare_den_models.html#Compare-Trajectories:">Compare Trajectories:</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/Demo__compare_msis_models.html">Demonstration for Comparing the MSIS model versions in GEODYN</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../notebooks/Demo__compare_msis_models.html#Input-Starlette-SLR-run-parameters:">Input Starlette-SLR run parameters:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../notebooks/Demo__compare_msis_models.html#Coefficient-of-Drag-Adjustments">Coefficient of Drag Adjustments</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../notebooks/Demo__compare_msis_models.html#Details-and-Background:">Details and Background:</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../notebooks/Demo__compare_msis_models.html#Adjusted-Cd-Plot-(timeseries)">Adjusted Cd Plot (timeseries)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../notebooks/Demo__compare_msis_models.html#Cd-Analysis">Cd Analysis</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../notebooks/Demo__compare_msis_models.html#Density-Output">Density Output</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../notebooks/Demo__compare_msis_models.html#Density-output-Analysis">Density output Analysis</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../notebooks/Demo__compare_msis_models.html#Residuals-–-obervations">Residuals – obervations</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../notebooks/Demo__compare_msis_models.html#Details:">Details:</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../notebooks/Demo__compare_msis_models.html#Analysis">Analysis</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../notebooks/Demo__compare_msis_models.html#Residuals-–-measurement-summary">Residuals – measurement summary</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../notebooks/Demo__compare_msis_models.html#Residuals-–-station-summary">Residuals – station summary</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/compare_msis_models_multiplearcs_multiplemodels.html">MSIS Evaluation- Multiple Arcs</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../notebooks/compare_msis_models_multiplearcs_multiplemodels.html#Analysis">Analysis</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../notebooks/compare_msis_models_multiplearcs_multiplemodels.html#On-Starlette’s-orbit">On Starlette’s orbit</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../notebooks/compare_msis_models_multiplearcs_multiplemodels.html#Relative-model-performance">Relative model performance</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../notebooks/compare_msis_models_multiplearcs_multiplemodels.html#Load-the-simulations-over-all-arcs">Load the simulations over all arcs</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../notebooks/compare_msis_models_multiplearcs_multiplemodels.html#Coefficient-of-Drag-Adjustments">Coefficient of Drag Adjustments</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../notebooks/compare_msis_models_multiplearcs_multiplemodels.html#Details-and-Background:">Details and Background:</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../notebooks/compare_msis_models_multiplearcs_multiplemodels.html#Adjusted-Cd-Plot-(timeseries)">Adjusted Cd Plot (timeseries)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../notebooks/compare_msis_models_multiplearcs_multiplemodels.html#Cd-Analysis">Cd Analysis</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../notebooks/compare_msis_models_multiplearcs_multiplemodels.html#Density-Output">Density Output</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../notebooks/compare_msis_models_multiplearcs_multiplemodels.html#Density-output-Analysis">Density output Analysis</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../notebooks/compare_msis_models_multiplearcs_multiplemodels.html#Residuals-–-obervations">Residuals – obervations</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../notebooks/compare_msis_models_multiplearcs_multiplemodels.html#Details:">Details:</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../notebooks/compare_msis_models_multiplearcs_multiplemodels.html#id3">Analysis</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../notebooks/compare_msis_models_multiplearcs_multiplemodels.html#Residuals-–-station-summary">Residuals – station summary</a></li>
 </ul>
 </li>
 </ul>
@@ -301,7 +385,7 @@ If on the last iteration, it prints the parameters to a file <code class="docuti
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../notebooks/index.html" class="btn btn-neutral float-right" title="Notebook" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../notebooks/index.html" class="btn btn-neutral float-right" title="Notebooks" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="index.html" class="btn btn-neutral float-left" title="GEODYN Details" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>

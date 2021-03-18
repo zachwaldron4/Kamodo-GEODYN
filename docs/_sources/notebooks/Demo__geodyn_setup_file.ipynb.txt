@@ -24,7 +24,7 @@
    "cell_type": "markdown",
    "metadata": {},
    "source": [
-    "### Location\n",
+    "## Location\n",
     "The setup file can be found in the `setups` directory."
    ]
   },
@@ -37,21 +37,21 @@
      "name": "stdout",
      "output_type": "stream",
      "text": [
-      "total 7880\r\n",
-      "-rw-r--r--. 1 m_geodyn 4296867 Feb 24 00:41 example_st030914_2wk\r\n",
-      "-rw-r--r--. 1 m_geodyn  470695 Feb 22 23:25 \u001b[0m\u001b[38;5;9mst030914_2wk.bz2\u001b[0m\r\n",
-      "-rw-r--r--. 1 m_geodyn  469224 Feb 22 23:23 \u001b[38;5;9mst030928_2wk.bz2\u001b[0m\r\n",
-      "-rw-r--r--. 1 m_geodyn  469782 Feb 22 23:23 \u001b[38;5;9mst031012_2wk.bz2\u001b[0m\r\n",
-      "-rw-r--r--. 1 m_geodyn  470030 Feb 22 23:23 \u001b[38;5;9mst031026_2wk.bz2\u001b[0m\r\n",
-      "-rw-r--r--. 1 m_geodyn  470095 Feb 22 23:23 \u001b[38;5;9mst031109_2wk.bz2\u001b[0m\r\n",
-      "-rw-r--r--. 1 m_geodyn  469724 Feb 22 23:23 \u001b[38;5;9mst031123_2wk.bz2\u001b[0m\r\n",
-      "-rw-r--r--. 1 m_geodyn  470064 Feb 22 23:23 \u001b[38;5;9mst031207_2wk.bz2\u001b[0m\r\n",
-      "-rw-r--r--. 1 m_geodyn  469973 Feb 22 23:23 \u001b[38;5;9mst031221_2wk.bz2\u001b[0m\r\n"
+      "total 7880\n",
+      "-rw-r--r--. 1 m_geodyn 4296867 Feb 24 00:41 example_st030914_2wk\n",
+      "-rw-r--r--. 1 m_geodyn  470695 Feb 22 23:25 \u001b[0m\u001b[38;5;9mst030914_2wk.bz2\u001b[0m\n",
+      "-rw-r--r--. 1 m_geodyn  469224 Feb 22 23:23 \u001b[38;5;9mst030928_2wk.bz2\u001b[0m\n",
+      "-rw-r--r--. 1 m_geodyn  469782 Feb 22 23:23 \u001b[38;5;9mst031012_2wk.bz2\u001b[0m\n",
+      "-rw-r--r--. 1 m_geodyn  470030 Feb 22 23:23 \u001b[38;5;9mst031026_2wk.bz2\u001b[0m\n",
+      "-rw-r--r--. 1 m_geodyn  470095 Feb 22 23:23 \u001b[38;5;9mst031109_2wk.bz2\u001b[0m\n",
+      "-rw-r--r--. 1 m_geodyn  469724 Feb 22 23:23 \u001b[38;5;9mst031123_2wk.bz2\u001b[0m\n",
+      "-rw-r--r--. 1 m_geodyn  470064 Feb 22 23:23 \u001b[38;5;9mst031207_2wk.bz2\u001b[0m\n",
+      "-rw-r--r--. 1 m_geodyn  469973 Feb 22 23:23 \u001b[38;5;9mst031221_2wk.bz2\u001b[0m\n"
      ]
     }
    ],
    "source": [
-    "ll /data/runs_geodyn/st/setups/msis_acceloff/"
+    "ll /data/geodyn_proj/runs_geodyn/st/setups/msis_acceloff/"
    ]
   },
   {
@@ -65,7 +65,14 @@
    "cell_type": "markdown",
    "metadata": {},
    "source": [
-    "## DRAG\n",
+    "## Card Options"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### DRAG\n",
     "\n",
     "The `DRAG` card is used to modify the drag application and/or requests estimation of drag coefficients.\n",
     "\n",
@@ -88,7 +95,7 @@
    "cell_type": "markdown",
    "metadata": {},
    "source": [
-    "### CONDRG\n",
+    "#### CONDRG\n",
     "\n",
     "Introduces time constraints for time dependent drag.\n",
     "\n",
@@ -102,7 +109,7 @@
    "cell_type": "markdown",
    "metadata": {},
    "source": [
-    "## OBSVU\n",
+    "### OBSVU\n",
     "\n",
     "Controls residual printout for all arcs.\n",
     "\n",
@@ -121,7 +128,7 @@
    "cell_type": "markdown",
    "metadata": {},
    "source": [
-    "## RESIDU\n",
+    "### RESIDU\n",
     "\n",
     "Requests residual file output on unit 19 on the last inner of the last global iteration .\n",
     "\n",
@@ -146,7 +153,7 @@
    "cell_type": "markdown",
    "metadata": {},
    "source": [
-    "## ORBFIL\n",
+    "### ORBFIL\n",
     "\n",
     "Requests output of trajectory file (s) on specified unit (s) on the last iteration of the run.\n",
     "\n",
@@ -181,7 +188,7 @@
    "cell_type": "markdown",
    "metadata": {},
    "source": [
-    "## ORBTVU\n",
+    "### ORBTVU\n",
     "\n",
     "Requests trajectory printout . Cartesian elements on unit 8 and Keplerian elements on unit 10.\n",
     "\n",
@@ -220,7 +227,7 @@
    "cell_type": "markdown",
    "metadata": {},
    "source": [
-    "## ATMDEN\n",
+    "### ATMDEN\n",
     "\n",
     "**Card Switch Options:**\n",
     "\n",
@@ -237,7 +244,7 @@
    "cell_type": "markdown",
    "metadata": {},
    "source": [
-    "## ACCEL9\n",
+    "### ACCEL9\n",
     "\n",
     "Requests application and/or adjustment of general acceleration.\n",
     "\n",
@@ -315,7 +322,8 @@
    "nbconvert_exporter": "python",
    "pygments_lexer": "ipython3",
    "version": "3.8.5"
-  }
+  },
+  "toc-autonumbering": true
  },
  "nbformat": 4,
  "nbformat_minor": 4
