@@ -1,5 +1,5 @@
 
-Welcome to the GEODYN-Kamodo Project documentation!
+GEODYN-Kamodo Project Documentation
 ====================================================
 
 Contents:
@@ -11,9 +11,8 @@ Contents:
    about_proj/index
    getting_started/index
    geodyn_details/index
-   notebooks/index
-
-
+   density_model_evaluation/index
+   drhodz_eval/index
 
 
 Indices and tables

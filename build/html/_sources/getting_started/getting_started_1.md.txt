@@ -28,7 +28,7 @@ In order to view the Jupyter notebook environment on a local machine, we forward
     
   
  2. This will activate something that looks similar to the following script. Copy the bottom link and paste in a browser of your choice. I typically use Chrome.  If all goes according to plan you should be able to see the internal server's directories from the jupyter file browser.  
-```commandline
+```text
 (base) [########@####### /]$ jupyter notebook --no-browser --port 1234
 [I 22:02:02.049 NotebookApp] Serving notebooks from local directory: /
 [I 22:02:02.049 NotebookApp] Jupyter Notebook 6.1.4 is running at:

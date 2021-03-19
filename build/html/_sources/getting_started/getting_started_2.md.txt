@@ -6,7 +6,7 @@
 
  The project files are located in the `/data/geodyn_proj` directory.  The sections of the project are then separated into the following directories (superfluous directories have been omitted):  
 
-```commandline
+```text
 (base) [shared_user@tools_dev geodyn_proj]$ tree -L 2
 .
 ├── analysis               ---- contains all notebooks for viewing and evaluating the data)
