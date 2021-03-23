@@ -11,6 +11,7 @@ Contents:
    about_proj/index
    getting_started/index
    geodyn_details/index
+   geodyn_readers/index
    density_model_evaluation/index
    drhodz_eval/index
 

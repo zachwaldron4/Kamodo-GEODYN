@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Demo: Setup File &mdash; Kamodo-GEODYN Documentation tbd documentation</title>
+  <title>Location &mdash; Kamodo-GEODYN Documentation tbd documentation</title>
   
 
   
@@ -135,18 +135,18 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Demo: Setup File</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#Location">Location</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#Card-Options">Card Options</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#DRAG">DRAG</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#OBSVU">OBSVU</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#RESIDU">RESIDU</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#ORBFIL">ORBFIL</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#ORBTVU">ORBTVU</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#ATMDEN">ATMDEN</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#ACCEL9">ACCEL9</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Location</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Card-Options">Card Options</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#DRAG">DRAG</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#CONDRG">CONDRG</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="#OBSVU">OBSVU</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#RESIDU">RESIDU</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ORBFIL">ORBFIL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ORBTVU">ORBTVU</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ATMDEN">ATMDEN</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ACCEL9">ACCEL9</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="Demo__geodyn_output_explained.html">Demo: Reading Data</a><ul>
@@ -162,6 +162,10 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="msis_edits.html">Upgrading MSIS in GEODYN:</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../geodyn_readers/index.html">GEODYN Readers</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../geodyn_readers/readers_intro.html">Reading the GEODYN Output:</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../density_model_evaluation/index.html">Density Model Evaluations</a><ul>
@@ -246,7 +250,7 @@
         
           <li><a href="index.html">GEODYN Details</a> &raquo;</li>
         
-      <li>Demo: Setup File</li>
+      <li>Location</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -520,19 +524,8 @@ div.rendered_html tbody tr:hover {
     text-align: unset;
 }
 </style>
-<div class="section" id="Demo:-Setup-File">
-<h1>Demo: Setup File<a class="headerlink" href="#Demo:-Setup-File" title="Permalink to this headline">¶</a></h1>
-<p>This notebook contains details on the setup file (Unit 5) that is an input to geodyn. Specifically, we outline which cards are critical to have correctly optioned, and what those cards do.</p>
-<p>The run parameters for the GEODYN run demoed here are:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>- Satellite:             Starlette
-- Observation Datatype:  SLR
-- Arc time:              14 days (2003/09/14 - 2003/09/28)
-- Gen. Accelerations:    Off
-- Density Model:         MSIS 2.0
-</pre></div>
-</div>
 <div class="section" id="Location">
-<h2>Location<a class="headerlink" href="#Location" title="Permalink to this headline">¶</a></h2>
+<h1>Location<a class="headerlink" href="#Location" title="Permalink to this headline">¶</a></h1>
 <p>The setup file can be found in the <code class="docutils literal notranslate"><span class="pre">setups</span></code> directory.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
@@ -567,9 +560,9 @@ div.rendered_html tbody tr:hover {
 <p>The file is too big to be read in and presented as an example, so instead I explain the most important card options.</p>
 </div>
 <div class="section" id="Card-Options">
-<h2>Card Options<a class="headerlink" href="#Card-Options" title="Permalink to this headline">¶</a></h2>
+<h1>Card Options<a class="headerlink" href="#Card-Options" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="DRAG">
-<h3>DRAG<a class="headerlink" href="#DRAG" title="Permalink to this headline">¶</a></h3>
+<h2>DRAG<a class="headerlink" href="#DRAG" title="Permalink to this headline">¶</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">DRAG</span></code> card is used to modify the drag application and/or requests estimation of drag coefficients.</p>
 <p><strong>The input to the setup file follow the following format:</strong></p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>DRAG             7501001    0.2200000000D+01
@@ -583,7 +576,7 @@ DRAG             7501001    0.2200000000D+010309160800 0.00    0.100D+02
 </pre></div>
 </div>
 <div class="section" id="CONDRG">
-<h4>CONDRG<a class="headerlink" href="#CONDRG" title="Permalink to this headline">¶</a></h4>
+<h3>CONDRG<a class="headerlink" href="#CONDRG" title="Permalink to this headline">¶</a></h3>
 <p>Introduces time constraints for time dependent drag.</p>
 <p><strong>The input to the setup file follow the following format:</strong></p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>CONDRG  1        7501001     0309140000 0.000309280000 0.00      0.50000  28800.
@@ -592,7 +585,7 @@ DRAG             7501001    0.2200000000D+010309160800 0.00    0.100D+02
 </div>
 </div>
 <div class="section" id="OBSVU">
-<h3>OBSVU<a class="headerlink" href="#OBSVU" title="Permalink to this headline">¶</a></h3>
+<h2>OBSVU<a class="headerlink" href="#OBSVU" title="Permalink to this headline">¶</a></h2>
 <p>Controls residual printout for all arcs.</p>
 <p><strong>Card Switch Options:</strong> - = 4 Indicates residuals are requested on all iterations for all arcs . - = 5 Indicates no residuals are requested for any arc.</p>
 <p><strong>The input to the setup file follow the following format:</strong></p>
@@ -601,7 +594,7 @@ DRAG             7501001    0.2200000000D+010309160800 0.00    0.100D+02
 </div>
 </div>
 <div class="section" id="RESIDU">
-<h3>RESIDU<a class="headerlink" href="#RESIDU" title="Permalink to this headline">¶</a></h3>
+<h2>RESIDU<a class="headerlink" href="#RESIDU" title="Permalink to this headline">¶</a></h2>
 <p>Requests residual file output on unit 19 on the last inner of the last global iteration .</p>
 <div class="line-block">
 <div class="line"><strong>Card Switch Options:</strong> - Column 7</div>
@@ -614,7 +607,7 @@ DRAG             7501001    0.2200000000D+010309160800 0.00    0.100D+02
 </div>
 </div>
 <div class="section" id="ORBFIL">
-<h3>ORBFIL<a class="headerlink" href="#ORBFIL" title="Permalink to this headline">¶</a></h3>
+<h2>ORBFIL<a class="headerlink" href="#ORBFIL" title="Permalink to this headline">¶</a></h2>
 <p>Requests output of trajectory file (s) on specified unit (s) on the last iteration of the run.</p>
 <p><strong>Card Switch Options:</strong> - Column 7 – Coordinate system of output - 0 - True of date ( default ) 0 - 1 - True of reference date - 2 - Mean of year 2000 - Column 8 – Switch indicating whether trajectory file - 0 - Single satellite - 1 - Set of satellites . This option has meaning only when used in conjunction with sets of satellites (See EPOCH and SLAVE option cards for more details ). If satellite ID in columns 18 -24 is a master satellite , then the trajectory for all satellites in the set will
 be output . - Columns 9 -11 – Mandatory unit number for trajectory file . All trajectory files within an arc must have unique unit numbers . The suggested unit number starts at 130. [3] - This one is very confusing - 31 was listed before ?? - Columns 18-24 – Satellite ID</p>
@@ -629,7 +622,7 @@ be output . - Columns 9 -11 – Mandatory unit number for trajectory file . All 
 </div>
 </div>
 <div class="section" id="ORBTVU">
-<h3>ORBTVU<a class="headerlink" href="#ORBTVU" title="Permalink to this headline">¶</a></h3>
+<h2>ORBTVU<a class="headerlink" href="#ORBTVU" title="Permalink to this headline">¶</a></h2>
 <p>Requests trajectory printout . Cartesian elements on unit 8 and Keplerian elements on unit 10.</p>
 <p><strong>Card Switch Options:</strong></p>
 <ul class="simple">
@@ -667,7 +660,7 @@ be output . - Columns 9 -11 – Mandatory unit number for trajectory file . All 
 </div>
 </div>
 <div class="section" id="ATMDEN">
-<h3>ATMDEN<a class="headerlink" href="#ATMDEN" title="Permalink to this headline">¶</a></h3>
+<h2>ATMDEN<a class="headerlink" href="#ATMDEN" title="Permalink to this headline">¶</a></h2>
 <p><strong>Card Switch Options:</strong></p>
 <p><strong>The input to the setup file follow the following format:</strong></p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>ATMDEN  86    0
@@ -675,7 +668,7 @@ be output . - Columns 9 -11 – Mandatory unit number for trajectory file . All 
 </div>
 </div>
 <div class="section" id="ACCEL9">
-<h3>ACCEL9<a class="headerlink" href="#ACCEL9" title="Permalink to this headline">¶</a></h3>
+<h2>ACCEL9<a class="headerlink" href="#ACCEL9" title="Permalink to this headline">¶</a></h2>
 <p>Requests application and/or adjustment of general acceleration.</p>
 <p><strong>NOTE</strong>: For the purposes of researching satellite drag and validating density models, we really want to have the estimation of general accelerations turned off. The estimation of accelerations really just serves to fill in and fudge some of the accelerations that the satellite may be being felt. By estimating these accelerations, we are allowing them to absorb some of the “error” in the <span class="math notranslate nohighlight">\(\rho\)</span> and <span class="math notranslate nohighlight">\(C_d\)</span>.</p>
 <p>Accel 9 controls the 9-parameter general accelerations that can be made to be estimated on each iteration of GEODYN.</p>
@@ -705,7 +698,6 @@ ACCEL9  22       7501001 0.0                                1.000000D+00
     2 - Sine coefficient (B)
     3 - Constant (C)
 </pre></div>
-</div>
 </div>
 </div>
 </div>
